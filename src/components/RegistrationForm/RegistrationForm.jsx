@@ -1,8 +1,9 @@
 // import PropTypes from 'prop-types';
 import { useState } from 'react';
-import s from './LoginForm.module.scss';
+import s from './RegistrationForm.module.scss';
 
-function LoginForm({ onSubmit }) {
+function RegistrationForm({ onSubmit }) {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,6 +12,7 @@ function LoginForm({ onSubmit }) {
 
     const data = { email, password };
     onSubmit(data);
+    setName('');
     setEmail('');
     setPassword('');
   }
@@ -18,6 +20,9 @@ function LoginForm({ onSubmit }) {
   function handleChange(event) {
     const { name, value } = event.currentTarget;
     switch (name) {
+      case 'name':
+        setName(value);
+        break;
       case 'email':
         setEmail(value);
         break;
@@ -32,32 +37,17 @@ function LoginForm({ onSubmit }) {
   return (
     // <div className="container">
     <form className={s.Form} onSubmit={handleSubmit}>
-      {/* <label >
-          Email *
-          <input
-            type="email"
-            name="email"
-            required
-            autofocus
-            autoComplete="off"
-            value={email}
-            placeholder="Email"
-            onChange={handleChange}
-          />
-        </label>
-
-        <label>
-          Password *
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            placeholder="Password *"
-            onChange={handleChange}
-          />
-        </label> */}
-
+      <input
+        className={s.Input}
+        type="text"
+        name="name"
+        required
+        autofocus
+        autoComplete="off"
+        value={name}
+        placeholder="Name *"
+        onChange={handleChange}
+      />
       <input
         className={s.Input}
         type="email"
@@ -81,10 +71,10 @@ function LoginForm({ onSubmit }) {
       />
 
       <div className={s.BtnGroup}>
-        <button type="submit" className={s.BtnActive}>
+        <button type="submit" className={s.Btn}>
           Вхід
         </button>
-        <button type="button" className={s.Btn}>
+        <button type="button" className={s.BtnActive}>
           Реєстрація
         </button>
       </div>
@@ -93,8 +83,8 @@ function LoginForm({ onSubmit }) {
   );
 }
 
-export default LoginForm;
+export default RegistrationForm;
 
-// LoginForm.propTypes = {
+// RegistrationForm.propTypes = {
 //   onSubmit: PropTypes.func.isRequired,
 // };
