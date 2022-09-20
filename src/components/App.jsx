@@ -10,7 +10,9 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      Hello
+
+      Privet
+
     </div>
   );
 };
