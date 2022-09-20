@@ -1,6 +1,8 @@
 // додаємо імпорти нижче, щоб менше було конфліктів
 import LoginForm from '../components/LoginForm/LoginForm';
 import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
+import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
+import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
 // import from
 // import from
 // import  from
@@ -9,6 +11,18 @@ import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
 // import  from
 
 export const App = () => {
+  // const productList = useSelector(store => {
+  //   const filteredProduct = store.contacts.items.filter(item =>
+  //     item.name.toLowerCase().includes(store.filter.toLocaleLowerCase())
+  //   );
+  //   return filteredProduct;
+  // });
+
+  // const onAddProduct = data => {
+  //   const action = addItems(data);
+  //   dispatch(action);
+  // };
+
   return (
     <div className="container">
       <LoginForm />
@@ -17,6 +31,11 @@ export const App = () => {
       {/* <RegistrationForm /> */}
       {/* <RegistrationForm /> */}
       {/* <RegistrationForm /> */}
+      <DiaryAddProductForm // onSubmit={onAddProduct}
+      />
+      <DiaryProductsList
+      // productList={productList} onDeleteProductListItem={onDelContact}
+      />
     </div>
   );
 };
