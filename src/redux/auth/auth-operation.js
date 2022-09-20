@@ -42,7 +42,7 @@ export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, { rejectWithValue, getState }) => {
     const value = getState();
-    const sid = value.auth.user.id;
+    const sid = value.user.id;
 
     if (!sid) {
       return rejectWithValue(`token is invalid`);
