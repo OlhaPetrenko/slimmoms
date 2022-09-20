@@ -40,9 +40,9 @@ function RegistrationForm() {
 
   return (
     // <div className="container">
-    <form className={s.Form} onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <input
-        className={s.Input}
+        className={s.input}
         type="text"
         name="name"
         required
@@ -53,7 +53,7 @@ function RegistrationForm() {
         onChange={handleChange}
       />
       <input
-        className={s.Input}
+        className={s.input}
         type="email"
         name="email"
         required
@@ -65,7 +65,7 @@ function RegistrationForm() {
       />
 
       <input
-        className={s.Input}
+        className={s.input}
         type="password"
         name="password"
         required
@@ -74,12 +74,12 @@ function RegistrationForm() {
         onChange={handleChange}
       />
 
-      <div className={s.BtnGroup}>
-        <button type="submit" className={s.Btn}>
-          Вхід
+      <div className={s.btnGroup}>
+        <button type="submit" className={s.btn}>
+          Login
         </button>
-        <button type="button" className={s.BtnActive}>
-          Реєстрація
+        <button type="button" className={s.btnActive}>
+          Register
         </button>
       </div>
     </form>
