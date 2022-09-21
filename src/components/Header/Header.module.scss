@@ -1,0 +1,28 @@
+@import 'shared/styles/';
+
+.header {
+  margin-top: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  &Burger {
+    background-image: url(../../shared/images/logo/mobile-burger.svg);
+    width: 24px;
+    height: 24px;
+    align-items: start;
+    @include media-query(tablet) {
+      display: none;
+    }
+  }
+  @include media-query(tablet) {
+    justify-content: space-between;
+  }
+  @include media-query(desktop) {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+}
