@@ -1,23 +1,27 @@
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { rootReducer } from './root-reducer/rootreduser';
+
 import {
-  configureStore,
-  getDefaultMiddleware,
-  combineReducers,
-} from '@reduxjs/toolkit';
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
-import authReducer from './auth/auth-slice';
-import dailyRateReducer from './dailyRate/dailyRate-slice';
-import dayReducer from './day/day-slice';
-import productReducer from './product/product-slice';
-import userReducer from './user/user.slice';
-
-const rootReducer = combineReducers({
-  auth: authReducer,
-  dailyRate: dailyRateReducer,
-  day: dayReducer,
-  product: productReducer,
-  user: userReducer,
-});
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+];
 
 export const store = configureStore({
   reducer: rootReducer,
+  middleware,
 });
+
+export const persistor = persistStore(store);

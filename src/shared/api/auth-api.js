@@ -5,7 +5,7 @@ export const instance = axios.create({
 });
 
 const setToken = (accessToken = '') => {
-  instance.defaults.headers.authorization = `Bearer ${accessToken}`;
+  instance.defaults.headers.Authorization = `Bearer ${accessToken}`;
 };
 
 export const registration = async data => {
@@ -26,8 +26,9 @@ export const logout = async () => {
   return result;
 };
 
-export const refresh = async sid => {
-  const { data: result } = await instance.post('/auth/refresh', sid);
-  setToken(result.accessToken);
+export const refresh = async data => {
+  setToken(data.refreshToken);
+  const { data: result } = await instance.post('/auth/refresh', data.seasonid);
+
   return result;
 };

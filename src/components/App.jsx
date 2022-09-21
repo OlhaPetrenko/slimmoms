@@ -1,12 +1,11 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import Header from './Header/Header';
 import UserRoutes from './UserRouts/UserRoutes';
-
-// import LoginPage from '../pages/LoginPage/LoginPage';
-// import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
-// import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
-// import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
-
+import { refreshUser } from 'redux/auth/auth-operation';
 export const App = () => {
+  const dispatch = useDispatch();
   // const productList = useSelector(store => {
   //   const filteredProduct = store.contacts.items.filter(item =>
   //     item.name.toLowerCase().includes(store.filter.toLocaleLowerCase())
@@ -18,15 +17,17 @@ export const App = () => {
   //   const action = addItems(data);
   //   dispatch(action);
   // };
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, []);
 
   return (
-    // <div className="container">
-    <>
-      <Header />
-
-      <UserRoutes />
-    </>
-    // </div>
+    <div className="container">
+      <>
+        <Header />
+        <UserRoutes />
+      </>
+    </div>
   );
 };
 
