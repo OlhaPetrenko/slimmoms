@@ -46,7 +46,7 @@ function RegistrationForm() {
         type="text"
         name="name"
         required
-        autofocus
+        autoFocus
         autoComplete="off"
         value={name}
         placeholder="Name *"
@@ -57,7 +57,6 @@ function RegistrationForm() {
         type="email"
         name="email"
         required
-        autofocus
         autoComplete="off"
         value={email}
         placeholder="Email *"

@@ -67,7 +67,7 @@ function LoginForm() {
         type="email"
         name="email"
         required
-        autofocus
+        autoFocus
         autoComplete="off"
         value={email}
         placeholder="Email *"
