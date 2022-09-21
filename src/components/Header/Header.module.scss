@@ -9,15 +9,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  &Burger {
-    background-image: url(../../shared/images/logo/mobile-burger.svg);
-    width: 24px;
-    height: 24px;
-    align-items: start;
-    @include media-query(tablet) {
-      display: none;
-    }
-  }
+  justify-content: center;
   @include media-query(tablet) {
     justify-content: space-between;
   }
@@ -26,5 +18,3 @@
     justify-content: flex-start;
   }
 }
-
-// 1st
