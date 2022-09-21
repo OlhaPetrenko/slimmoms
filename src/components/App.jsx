@@ -1,4 +1,5 @@
 // додаємо імпорти нижче, щоб менше було конфліктів
+import Header from './Header/Header'
 import LoginPage from '../pages/LoginPage/LoginPage';
 import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
 import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
@@ -24,12 +25,9 @@ export const App = () => {
   return (
     // <div className="container">
     <>
+      <Header />
       <LoginPage />
       <RegistrationPage />
-      {/* <RegistrationForm /> */}
-      {/* <RegistrationForm /> */}
-      {/* <RegistrationForm /> */}
-
       <DiaryAddProductForm // onSubmit={onAddProduct}
       />
       <DiaryProductsList
