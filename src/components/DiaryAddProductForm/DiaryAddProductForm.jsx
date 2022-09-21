@@ -48,7 +48,7 @@ function DiaryAddProductForm({ onSubmit }) {
       <input
         onChange={hendleInputChange}
         // value={productName}
-        className={s.input}
+        className={s.input1}
         type="text"
         name="name"
         placeholder="Enter product name"
@@ -60,7 +60,7 @@ function DiaryAddProductForm({ onSubmit }) {
       <input
         onChange={hendleInputChange}
         // value={grams}
-        className={s.input}
+        className={s.input2}
         type="number"
         name="Product weight"
         placeholder="Grams"
@@ -68,9 +68,11 @@ function DiaryAddProductForm({ onSubmit }) {
         required
         id={gramsInputId}
       />
-      <button className={s.btn} type="submit">
+      <button className={s.btn1} type="submit">
         Add
       </button>
+
+      <button className={s.btn2} type="submit"></button>
     </form>
   );
 }
