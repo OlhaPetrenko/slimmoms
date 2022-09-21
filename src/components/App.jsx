@@ -1,13 +1,10 @@
-// додаємо імпорти нижче, щоб менше було конфліктів
-import Header from './Header/Header'
-import LoginPage from '../pages/LoginPage/LoginPage';
-import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
-import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
-import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
-// import from
-// import from
-// import  from
-// import from
+import Header from './Header/Header';
+import UserRoutes from './UserRouts/UserRoutes';
+
+// import LoginPage from '../pages/LoginPage/LoginPage';
+// import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
+// import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
+// import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
 
 export const App = () => {
   // const productList = useSelector(store => {
@@ -26,13 +23,8 @@ export const App = () => {
     // <div className="container">
     <>
       <Header />
-      <LoginPage />
-      <RegistrationPage />
-      <DiaryAddProductForm // onSubmit={onAddProduct}
-      />
-      <DiaryProductsList
-      // productList={productList} onDeleteProductListItem={onDelContact}
-      />
+
+      <UserRoutes />
     </>
     // </div>
   );
