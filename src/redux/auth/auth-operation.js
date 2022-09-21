@@ -20,6 +20,7 @@ export const logInUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await login(data);
+      console.log(result);
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -43,13 +44,17 @@ export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, { rejectWithValue, getState }) => {
     const value = getState();
-    const sid = value.user.id;
 
+    const refreshToken = value.auth.refreshToken;
+    const sid = value.auth.sid;
+    const data = { refreshToken, seasonid: { sid } };
+    // console.log(data);
     if (!sid) {
       return rejectWithValue(`token is invalid`);
     }
     try {
-      const result = await refresh(sid);
+      const result = await refresh(data);
+
       return result;
     } catch (error) {
       return rejectWithValue(error.message);

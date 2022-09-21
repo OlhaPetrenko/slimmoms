@@ -1,23 +1,25 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import Header from './Header/Header';
-import UserRoutes from './UserRouts/UserRoutes';
 
 // import MainPage from '../pages/MainPage/MainPage';
 // import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
+
 // import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
-// import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
+// import Calendar from './Calendar/Calendar';
+// import Summary from './Summary/Summary';
 
+import UserRoutes from './UserRouts/UserRoutes';
+import { refreshUser } from 'redux/auth/auth-operation';
+import { userInfoOperation } from 'redux/user/user-operations';
 export const App = () => {
-  // const productList = useSelector(store => {
-  //   const filteredProduct = store.contacts.items.filter(item =>
-  //     item.name.toLowerCase().includes(store.filter.toLocaleLowerCase())
-  //   );
-  //   return filteredProduct;
-  // });
+  const dispatch = useDispatch();
 
-  // const onAddProduct = data => {
-  //   const action = addItems(data);
-  //   dispatch(action);
-  // };
+  useEffect(() => {
+    dispatch(refreshUser());
+    dispatch(userInfoOperation());
+  }, [dispatch]);
 
   return (
     <>
