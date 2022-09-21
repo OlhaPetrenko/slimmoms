@@ -1,4 +1,4 @@
-import { Logo, UserInfo, Navigation } from "/"
+import { Logo, UserInfo, Navigation, Burger } from "/"
 import s from "./Header.module.scss"
 
 const Header = () => {
@@ -11,9 +11,9 @@ const Header = () => {
         <nav className={ s.nav }>
           <Logo />
           { isLogin ?
-            <UserInfo /> :
-            <><Navigation /> <span className={ s.navBurger }></span>  </> }
-
+            <><UserInfo /><Burger /></> :
+            <Navigation />
+          }
         </nav>
       </div>
     </header >
