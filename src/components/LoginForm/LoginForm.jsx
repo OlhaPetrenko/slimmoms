@@ -1,20 +1,17 @@
 // import PropTypes from 'prop-types';
 import { useState } from 'react';
 import s from './LoginForm.module.scss';
-import { useDispatch } from 'react-redux';
-import { logInUser } from 'redux/auth/auth-operation';
 
-function LoginForm() {
+function LoginForm({ onSubmit }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
 
   function handleSubmit(event) {
     event.preventDefault();
 
     const data = { email, password };
-    dispatch(logInUser(data));
-    // onSubmit(data);
+
+    onSubmit(data);
     setEmail('');
     setPassword('');
   }

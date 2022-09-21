@@ -1,23 +1,25 @@
-import { Logo, UserInfo, Navigation } from "/"
-import s from "./Header.module.scss"
+import { Logo, UserInfo, Navigation } from '/';
+import s from './Header.module.scss';
 
 const Header = () => {
-
-  const isLogin = false
+  const isLogin = false;
 
   return (
-    <header className={ s.header }>
+    <header className={s.header}>
       <div className="container">
-        <nav className={ s.nav }>
+        <nav className={s.nav}>
           <Logo />
-          { isLogin ?
-            <UserInfo /> :
-            <><Navigation /> <span className={ s.navBurger }></span>  </> }
-
+          {isLogin ? (
+            <UserInfo />
+          ) : (
+            <>
+              <Navigation /> <span className={s.navBurger}></span>{' '}
+            </>
+          )}
         </nav>
       </div>
-    </header >
+    </header>
   );
-}
+};
 
 export default Header;
