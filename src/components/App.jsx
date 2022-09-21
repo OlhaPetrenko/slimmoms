@@ -2,30 +2,28 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Header from './Header/Header';
+// import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
+// import Calendar from './Calendar/Calendar';
+import Summary from './Summary/Summary';
+
 import UserRoutes from './UserRouts/UserRoutes';
 import { refreshUser } from 'redux/auth/auth-operation';
 export const App = () => {
   const dispatch = useDispatch();
-  // const productList = useSelector(store => {
-  //   const filteredProduct = store.contacts.items.filter(item =>
-  //     item.name.toLowerCase().includes(store.filter.toLocaleLowerCase())
-  //   );
-  //   return filteredProduct;
-  // });
 
-  // const onAddProduct = data => {
-  //   const action = addItems(data);
-  //   dispatch(action);
-  // };
   useEffect(() => {
     dispatch(refreshUser());
   }, []);
 
   return (
-    <div className="container">
+    <div>
       <>
         <Header />
+        {/* <Calendar />
+        <DiaryAddProductForm /> */}
+
         <UserRoutes />
+        <Summary />
       </>
     </div>
   );
