@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { userInfoOperation } from './user-operations';
 
 const initialState = {
-  user: {},
+  userInfo: {},
   isLoading: false,
+  isLogin: false,
   error: null,
 };
 
@@ -13,10 +14,14 @@ const userSlice = createSlice({
   extraReducers: {
     [userInfoOperation.pending]: state => {
       state.isLoading = true;
+
       state.error = null;
     },
     [userInfoOperation.fulfilled]: (state, { payload }) => {
-      return { ...payload, isLoading: false, error: null };
+      state.userInfo = payload;
+      state.isLogin = true;
+      state.isLoading = false;
+      // return { ...payload, isLogin: true, isLoading: false };
     },
     [userInfoOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;

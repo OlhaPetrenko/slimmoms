@@ -4,7 +4,7 @@ export const instance = axios.create({
   baseURL: 'https://slimmom-backend.goit.global',
 });
 
-const setToken = (accessToken = '') => {
+export const setToken = (accessToken = '') => {
   instance.defaults.headers.Authorization = `Bearer ${accessToken}`;
 };
 

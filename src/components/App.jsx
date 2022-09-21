@@ -8,20 +8,19 @@ import Summary from './Summary/Summary';
 
 import UserRoutes from './UserRouts/UserRoutes';
 import { refreshUser } from 'redux/auth/auth-operation';
+import { userInfoOperation } from 'redux/user/user-operations';
 export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, []);
+    dispatch(userInfoOperation());
+  }, [dispatch]);
 
   return (
     <div>
       <>
         <Header />
-        {/* <Calendar />
-        <DiaryAddProductForm /> */}
-
         <UserRoutes />
         <Summary />
       </>
