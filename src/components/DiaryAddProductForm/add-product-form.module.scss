@@ -1,0 +1,71 @@
+@import '../../common.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+
+  @include media-query(tablet) {
+    display: inline-block;
+  }
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid $style-color-form;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: $font-color-form;
+  width: 280px;
+  height: 16px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+
+  @include media-query(tablet) {
+  }
+}
+.input:not(:last-child) {
+  margin-bottom: 32px;
+
+  @include media-query(tablet) {
+    margin-bottom: 60px;
+    margin-right: 48px;
+    width: 240px;
+  }
+}
+.input:last-child {
+  @include media-query(tablet) {
+    margin-right: 60px;
+    width: 107px;
+  }
+}
+
+.btn {
+  color: $bg-color-primary;
+  background-color: $color-accent;
+  font-size: 14px;
+  line-height: 1.21;
+  font-weight: 700;
+  padding: 13px 46px;
+  border-radius: 30px;
+  width: 176px;
+  height: 44px;
+  align-items: center;
+  margin: auto;
+  margin-top: 60px;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+
+  @include media-query(tablet) {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: 50px;
+    padding: 0;
+  }
+}
+
+.btn:hover,
+:focus {
+}
