@@ -1,7 +1,7 @@
 import Header from './Header/Header';
 import UserRoutes from './UserRouts/UserRoutes';
 
-// import LoginPage from '../pages/LoginPage/LoginPage';
+// import MainPage from '../pages/MainPage/MainPage';
 // import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
 // import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
 // import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
@@ -20,13 +20,10 @@ export const App = () => {
   // };
 
   return (
-    // <div className="container">
     <>
       <Header />
-
       <UserRoutes />
     </>
-    // </div>
   );
 };
 
