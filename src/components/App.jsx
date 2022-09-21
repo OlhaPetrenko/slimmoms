@@ -1,6 +1,6 @@
 // додаємо імпорти нижче, щоб менше було конфліктів
-import LoginForm from '../components/LoginForm/LoginForm';
-import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
 import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
 import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
 // import from
@@ -24,9 +24,10 @@ export const App = () => {
   // };
 
   return (
-    <div className="container">
-      <LoginForm />
-      <RegistrationForm />
+    // <div className="container">
+    <>
+      <LoginPage />
+      <RegistrationPage />
       {/* <RegistrationForm /> */}
       {/* <RegistrationForm /> */}
       {/* <RegistrationForm /> */}
@@ -36,7 +37,8 @@ export const App = () => {
       <DiaryProductsList
       // productList={productList} onDeleteProductListItem={onDelContact}
       />
-    </div>
+    </>
+    // </div>
   );
 };
 

@@ -4,7 +4,7 @@ import s from './LoginForm.module.scss';
 import { useDispatch } from 'react-redux';
 import { logInUser } from 'redux/auth/auth-operation';
 
-function LoginForm({ onSubmit }) {
+function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function LoginForm({ onSubmit }) {
 
     const data = { email, password };
     dispatch(logInUser(data));
-    onSubmit(data);
+    // onSubmit(data);
     setEmail('');
     setPassword('');
   }
@@ -35,7 +35,7 @@ function LoginForm({ onSubmit }) {
 
   return (
     // <div className="container">
-    <form className={s.Form} onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
       {/* <label >
           Email *
           <input
@@ -63,7 +63,7 @@ function LoginForm({ onSubmit }) {
         </label> */}
 
       <input
-        className={s.Input}
+        className={s.input}
         type="email"
         name="email"
         required
@@ -75,7 +75,7 @@ function LoginForm({ onSubmit }) {
       />
 
       <input
-        className={s.Input}
+        className={s.input}
         type="password"
         name="password"
         required
@@ -84,12 +84,12 @@ function LoginForm({ onSubmit }) {
         onChange={handleChange}
       />
 
-      <div className={s.BtnGroup}>
-        <button type="submit" className={s.BtnActive}>
-          Вхід
+      <div className={s.btnGroup}>
+        <button type="submit" className={s.btnActive}>
+          Login
         </button>
-        <button type="button" className={s.Btn}>
-          Реєстрація
+        <button type="button" className={s.btn}>
+          Register
         </button>
       </div>
     </form>
