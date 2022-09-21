@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { productOperation } from './product-operation';
+import { productOperation } from './product-operations';
 
 const initialState = {
   id: '',
