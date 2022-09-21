@@ -1,4 +1,3 @@
-
 // додаємо імпорти нижче, щоб менше було конфліктів
 import Header from './Header/Header'
 import LoginPage from '../pages/LoginPage/LoginPage';
@@ -9,8 +8,6 @@ import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
 // import from
 // import  from
 // import from
-// import from
-// import  from
 
 export const App = () => {
   // const productList = useSelector(store => {
@@ -31,10 +28,6 @@ export const App = () => {
       <Header />
       <LoginPage />
       <RegistrationPage />
-      {/* <RegistrationForm /> */ }
-      {/* <RegistrationForm /> */ }
-      {/* <RegistrationForm /> */ }
-      {/* <RegistrationForm /> */ }
       <DiaryAddProductForm // onSubmit={onAddProduct}
       />
       <DiaryProductsList
