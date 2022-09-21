@@ -33,7 +33,8 @@ const daySlice = createSlice({
       state.error = null;
     },
 
-    // Допрацювати
+    // Допрацювати!!!
+
     [dayProductDeleteOperation.fulfilled]: (state, { payload }) => {
       state.daySummary = payload;
     },
