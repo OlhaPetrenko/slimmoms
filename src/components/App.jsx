@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Header from './Header/Header';
 import UserRoutes from './UserRouts/UserRoutes';
 import { refreshUser } from 'redux/auth/auth-operation';
+import { userInfoOperation } from 'redux/user/user-operations';
 export const App = () => {
   const dispatch = useDispatch();
   // const productList = useSelector(store => {
@@ -19,12 +20,14 @@ export const App = () => {
   // };
   useEffect(() => {
     dispatch(refreshUser());
-  }, []);
+    dispatch(userInfoOperation());
+  }, [dispatch]);
 
   return (
     <div className="container">
       <>
         <Header />
+
         <UserRoutes />
       </>
     </div>
