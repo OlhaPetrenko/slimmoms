@@ -1,5 +1,12 @@
+import Summary from 'components/Summary/Summary';
+
 const CalculatorPage = () => {
-  return <div>Calc</div>;
+  return (
+    <>
+      <div className="container">Calc</div>
+      <Summary />
+    </>
+  );
 };
 
 export default CalculatorPage;
