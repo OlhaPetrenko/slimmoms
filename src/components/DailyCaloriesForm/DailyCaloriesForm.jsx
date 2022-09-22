@@ -48,7 +48,53 @@ function DailyCaloriesForm({ onSubmit }) {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <div className={s.helper}>
-        <input
+        <div className={s.formItem}>
+          <input
+            type="number"
+            className={s.formInput}
+            required
+            name="height"
+            min="0"
+            value={height}
+            onChange={handleChange}
+            id="height"
+          />
+          <label className={s.formLabel} htmlFor="height">
+            Height*
+          </label>
+        </div>
+        <div className={s.formItem}>
+          <input
+            type="number"
+            className={s.formInput}
+            required
+            name="age"
+            min="0"
+            value={age}
+            onChange={handleChange}
+            id="age"
+          />
+          <label className={s.formLabel} htmlFor="ege">
+            Age *
+          </label>
+        </div>
+        <div className={s.formItem}>
+          <input
+            type="number"
+            className={s.formInput}
+            required
+            name="weight"
+            min="0"
+            value={weight}
+            onChange={handleChange}
+            id="curWeight"
+          />
+          <label className={s.formLabel} htmlFor="curWeight">
+            Current weight *
+          </label>
+        </div>
+
+        {/* <input
           className={s.input}
           type="number"
           name="height"
@@ -81,14 +127,30 @@ function DailyCaloriesForm({ onSubmit }) {
           value={weight}
           placeholder="Current weight *"
           onChange={handleChange}
-        />
+        /> */}
         <button type="submit" className={s.btnActiveLeft}>
           Start losing weight
         </button>
       </div>
 
       <div className={s.helper}>
-        <input
+        <div className={s.formItem}>
+          <input
+            type="number"
+            className={s.formInput}
+            required
+            name="desiredWeight"
+            min="0"
+            value={desiredWeight}
+            onChange={handleChange}
+            id="desiredWeight"
+          />
+          <label className={s.formLabel} htmlFor="desiredWeight">
+            Current weight *
+          </label>
+        </div>
+
+        {/* <input
           className={s.input}
           type="number"
           name="desiredWeight"
@@ -97,7 +159,7 @@ function DailyCaloriesForm({ onSubmit }) {
           value={desiredWeight}
           placeholder="Desired weight *"
           onChange={handleChange}
-        />
+        /> */}
         <div>
           <p className={s.radioText}>Blood type *</p>
           <div className={s.radioGroup}>
