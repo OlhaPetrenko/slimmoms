@@ -2,15 +2,16 @@ import { createSlice } from '@reduxjs/toolkit';
 import { productOperation } from './product-operations';
 
 const initialState = {
-  id: '',
-  categories: [],
-  weight: null,
-  title: {},
-  calories: null,
-  groupBloodNotAllowed: [],
-  __v: null,
-  isLoading: false,
-  error: null,
+  items: [],
+  // id: '',
+  // categories: [],
+  // weight: null,
+  // title: {},
+  // calories: null,
+  // groupBloodNotAllowed: [],
+  // __v: null,
+  // isLoading: false,
+  // error: null,
 };
 
 const productSlice = createSlice({
@@ -21,8 +22,9 @@ const productSlice = createSlice({
       state.isLoading = true;
       state.error = null;
     },
-    [productOperation.fulfilled]: (_, { payload }) => {
-      return payload;
+    [productOperation.fulfilled]: (state, { payload }) => {
+      state.items = [...payload];
+      // return payload;
     },
     [productOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;
