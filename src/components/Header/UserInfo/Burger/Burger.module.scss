@@ -7,7 +7,7 @@
   height: 24px;
   align-items: start;
   background-color: transparent;
-  @include media-query(tablet) {
+  @include media-query(desktop) {
     display: none;
   }
 }

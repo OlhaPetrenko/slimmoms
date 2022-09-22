@@ -1,0 +1,36 @@
+@import 'shared/styles/';
+
+.userInfo {
+  &Logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 40px;
+    // &:after {
+    //   content: '';
+    //   background-color: rgb(196, 196, 196);
+    //   height: 2px;
+    //   width: 32px;
+    //   display: block;
+    //   transform: rotate(90deg);
+    //   position: relative;
+    //   left: 30px;
+    //   top: 60px;
+    // }
+  }
+  &Img {
+    width: 159px;
+    height: 44px;
+    background-size: 100%;
+    background-image: url(../../../../shared/images/logo/user-info-mobile-logo.svg);
+    @include media-query(tablet) {
+      width: 162.3px;
+      height: 44px;
+      background-image: url(../../../../shared/images/logo/user-info-tablet-logo.svg);
+    }
+    @include media-query(desktop) {
+      width: 167px;
+      height: 66px;
+      background-image: url(../../../../shared/images/logo/user-info-desktop-logo.svg);
+    }
+  }
+}

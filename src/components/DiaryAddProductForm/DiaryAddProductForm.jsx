@@ -13,9 +13,9 @@ function DiaryAddProductForm({ onSubmit }) {
   const gramsInputId = nanoid();
 
   const hendleInputChange = e => {
-    const { productName, value } = e.currentTarget;
+    const { name, value } = e.currentTarget;
 
-    switch (productName) {
+    switch (name) {
       case 'productName':
         setName(value);
         break;
@@ -47,10 +47,15 @@ function DiaryAddProductForm({ onSubmit }) {
     <form onSubmit={onClickSubmit} className={s.form}>
       <input
         onChange={hendleInputChange}
+<<<<<<< Updated upstream
         // value={productName}
         className={s.input}
+=======
+        value={productName}
+        className={s.input1}
+>>>>>>> Stashed changes
         type="text"
-        name="name"
+        name="productName"
         placeholder="Enter product name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example - Poultry meat"
@@ -59,10 +64,15 @@ function DiaryAddProductForm({ onSubmit }) {
       />
       <input
         onChange={hendleInputChange}
+<<<<<<< Updated upstream
         // value={grams}
         className={s.input}
+=======
+        value={grams}
+        className={s.input2}
+>>>>>>> Stashed changes
         type="number"
-        name="Product weight"
+        name="grams"
         placeholder="Grams"
         pattern="^\d+(?:\.\d+)?\s*(?:grams)$"
         required

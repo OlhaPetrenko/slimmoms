@@ -1,10 +1,20 @@
 import Header from './Header/Header';
+<<<<<<< Updated upstream
 import UserRoutes from './UserRouts/UserRoutes';
 
 // import LoginPage from '../pages/LoginPage/LoginPage';
 // import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
 // import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
 // import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
+=======
+
+// import MainPage from '../pages/MainPage/MainPage';
+// import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
+
+// import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
+// import Calendar from './Calendar/Calendar';
+// import Summary from './Summary/Summary';
+>>>>>>> Stashed changes
 
 export const App = () => {
   // const productList = useSelector(store => {
@@ -20,6 +30,7 @@ export const App = () => {
   // };
 
   return (
+<<<<<<< Updated upstream
     // <div className="container">
     <>
       <Header />
@@ -27,6 +38,12 @@ export const App = () => {
       <UserRoutes />
     </>
     // </div>
+=======
+    <>
+      <Header />
+      <UserRoutes />
+    </>
+>>>>>>> Stashed changes
   );
 };
 
