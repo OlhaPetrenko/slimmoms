@@ -2,9 +2,13 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Header from './Header/Header';
+
+// import MainPage from '../pages/MainPage/MainPage';
+// import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
+
 // import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
 // import Calendar from './Calendar/Calendar';
-import Summary from './Summary/Summary';
+// import Summary from './Summary/Summary';
 
 import UserRoutes from './UserRouts/UserRoutes';
 import { refreshUser } from 'redux/auth/auth-operation';
@@ -18,13 +22,10 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <>
-        <Header />
-        <UserRoutes />
-        <Summary />
-      </>
-    </div>
+    <>
+      <Header />
+      <UserRoutes />
+    </>
   );
 };
 
