@@ -12,7 +12,7 @@ function DailyCaloriesForm({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const data = { height, age, weight, desiredWeight, blood };
+    const data = { height, age, weight, desiredWeight, bloodType: blood };
 
     onSubmit(data);
     setHeight('');

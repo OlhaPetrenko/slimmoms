@@ -40,7 +40,7 @@ function LoginForm({ onSubmit }) {
         pattern="\S+@[a-z]+.[a-z]+"
         required
         autoFocus
-        autoComplete="off"
+        // autoComplete="off"
         value={email}
         placeholder="Email *"
         onChange={handleChange}
