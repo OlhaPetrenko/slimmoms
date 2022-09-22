@@ -33,36 +33,11 @@ function LoginForm({ onSubmit }) {
   return (
     // <div className="container">
     <form className={s.form} onSubmit={handleSubmit}>
-      {/* <label >
-          Email *
-          <input
-            type="email"
-            name="email"
-            required
-            autofocus
-            autoComplete="off"
-            value={email}
-            placeholder="Email"
-            onChange={handleChange}
-          />
-        </label>
-
-        <label>
-          Password *
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            placeholder="Password *"
-            onChange={handleChange}
-          />
-        </label> */}
-
       <input
         className={s.input}
         type="email"
         name="email"
+        pattern="\S+@[a-z]+.[a-z]+"
         required
         autoFocus
         autoComplete="off"
@@ -75,6 +50,9 @@ function LoginForm({ onSubmit }) {
         className={s.input}
         type="password"
         name="password"
+        minlength="6"
+        maxlength="15"
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
         value={password}
         placeholder="Password *"
