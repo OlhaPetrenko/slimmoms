@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { dailyRateOperation } from 'redux/dailyRate/dailyRate-operations';
+
 import Modal from 'components/Modal/Modal';
 import DailyCaloriesForm from 'components/DailyCaloriesForm/DailyCaloriesForm';
 import s from './MainPage.module.scss';
 
 const MainPage = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -14,8 +17,10 @@ const MainPage = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
+
   const onSubmit = data => {
-    // dispatch(logInUser(data));
+    // console.log(data);
+    dispatch(dailyRateOperation(data));
   };
   return (
     <>
