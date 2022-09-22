@@ -10,6 +10,7 @@ import {
 const initialState = {
   user: {},
   accessToken: '',
+  refreshToken: '',
   sid: '',
   isLogin: false,
   isLoading: false,
@@ -40,6 +41,7 @@ const authSlice = createSlice({
     },
     [logInUser.fulfilled]: (state, { payload }) => {
       state.accessToken = payload.accessToken;
+      state.refreshToken = payload.refreshToken;
       state.sid = payload.sid;
       state.user = { ...state.user, ...payload.user };
       state.isLoading = false;
@@ -67,7 +69,8 @@ const authSlice = createSlice({
       state.error = null;
     },
     [refreshUser.fulfilled]: (state, { payload }) => {
-      state.accessToken = payload.accessToken;
+      state.accessToken = payload.newAccessToken;
+      state.refreshToken = payload.newRefreshToken;
       state.sid = payload.sid;
     },
     [refreshUser.rejected]: (state, { payload }) => {

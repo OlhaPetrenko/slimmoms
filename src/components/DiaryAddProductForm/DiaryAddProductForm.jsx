@@ -47,13 +47,8 @@ function DiaryAddProductForm({ onSubmit }) {
     <form onSubmit={onClickSubmit} className={s.form}>
       <input
         onChange={hendleInputChange}
-<<<<<<< Updated upstream
-        // value={productName}
-        className={s.input}
-=======
         value={productName}
         className={s.input1}
->>>>>>> Stashed changes
         type="text"
         name="productName"
         placeholder="Enter product name"
@@ -64,13 +59,8 @@ function DiaryAddProductForm({ onSubmit }) {
       />
       <input
         onChange={hendleInputChange}
-<<<<<<< Updated upstream
-        // value={grams}
-        className={s.input}
-=======
         value={grams}
         className={s.input2}
->>>>>>> Stashed changes
         type="number"
         name="grams"
         placeholder="Grams"
@@ -78,9 +68,11 @@ function DiaryAddProductForm({ onSubmit }) {
         required
         id={gramsInputId}
       />
-      <button className={s.btn} type="submit">
+      <button className={s.btn1} type="submit">
         Add
       </button>
+
+      <button className={s.btn2} type="submit"></button>
     </form>
   );
 }

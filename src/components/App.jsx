@@ -1,12 +1,14 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import Header from './Header/Header';
-<<<<<<< Updated upstream
+
 import UserRoutes from './UserRouts/UserRoutes';
 
-// import LoginPage from '../pages/LoginPage/LoginPage';
+// import MainPage from '../pages/MainPage/MainPage';
 // import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
+
 // import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
-// import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
-=======
 
 // import MainPage from '../pages/MainPage/MainPage';
 // import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
@@ -14,36 +16,26 @@ import UserRoutes from './UserRouts/UserRoutes';
 // import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
 // import Calendar from './Calendar/Calendar';
 // import Summary from './Summary/Summary';
->>>>>>> Stashed changes
 
+import { refreshUser } from 'redux/auth/auth-operation';
+import { userInfoOperation } from 'redux/user/user-operations';
 export const App = () => {
-  // const productList = useSelector(store => {
-  //   const filteredProduct = store.contacts.items.filter(item =>
-  //     item.name.toLowerCase().includes(store.filter.toLocaleLowerCase())
-  //   );
-  //   return filteredProduct;
-  // });
+  const dispatch = useDispatch();
 
-  // const onAddProduct = data => {
-  //   const action = addItems(data);
-  //   dispatch(action);
-  // };
+  useEffect(() => {
+    dispatch(refreshUser());
+    dispatch(userInfoOperation());
+  }, [dispatch]);
 
   return (
-<<<<<<< Updated upstream
     // <div className="container">
-    <>
-      <Header />
 
-      <UserRoutes />
-    </>
-    // </div>
-=======
     <>
       <Header />
       <UserRoutes />
     </>
->>>>>>> Stashed changes
+
+    // </div>
   );
 };
 

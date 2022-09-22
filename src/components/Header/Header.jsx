@@ -1,5 +1,8 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from 'redux/auth/auth-operation';
 import { Logo, UserInfo, Navigation, UserInfoLogo, Burger, MobileNav } from '/';
 import s from './Header.module.scss';
+
 // import { useSelector, useDispatch } from 'react-redux';
 // import { logoutUser } from 'redux/auth/auth-operation';
 
