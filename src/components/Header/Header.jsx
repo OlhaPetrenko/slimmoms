@@ -1,9 +1,11 @@
+import { useDispatch, useSelect } from 'react-redux';
 import { Logo, UserInfo, Navigation, UserInfoLogo, MobileNav } from '/';
 import s from './Header.module.scss';
 
-
 const Header = () => {
   const isLogin = true;
+  const dispatch = useDispatch()
+
 
   return (
     <div>
