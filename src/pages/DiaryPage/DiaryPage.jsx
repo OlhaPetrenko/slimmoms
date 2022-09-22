@@ -13,8 +13,8 @@ const DiaryPage = () => {
   const onSubmit = data => {
     dispatch(productOperation(data.productName));
   };
-  return (
 
+  return (
     <>
       <div className="container">
         <Calendar />
@@ -23,8 +23,6 @@ const DiaryPage = () => {
       </div>
       <Summary />
     </>
-
-
   );
 };
 
