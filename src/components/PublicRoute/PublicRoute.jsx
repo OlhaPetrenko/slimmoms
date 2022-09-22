@@ -5,7 +5,7 @@ const PublicRoute = () => {
   const LogIn = useSelector(state => state.auth.isLogin);
   const LogInUser = useSelector(state => state.user.isLogin);
   console.log(LogInUser);
-  if (LogIn) {
+  if (!LogInUser) {
     return <Navigate to="/diary" />;
   }
   return <Outlet />;

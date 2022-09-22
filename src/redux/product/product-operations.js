@@ -3,9 +3,15 @@ import { productSearch } from '../../shared/api/product-api';
 
 export const productOperation = createAsyncThunk(
   'product-search',
-  async (data, { rejectWithValue }) => {
+  async (data, { rejectWithValue, getState }) => {
+    const value = getState();
+    const accToken = value.auth.accessToken;
+    const objData = {
+      product: data,
+      token: accToken,
+    };
     try {
-      const result = await productSearch(data);
+      const result = await productSearch(objData);
       return result;
     } catch (error) {
       return rejectWithValue(error);

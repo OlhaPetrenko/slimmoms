@@ -7,23 +7,31 @@ import s from './Header.module.scss';
 // import { logoutUser } from 'redux/auth/auth-operation';
 
 const Header = () => {
-  const isLogin = false;
+  // const isLogin = false;
   // const dispatch = useDispatch();
-  // const isLogin = useSelector(state => state.auth.isLogin);
+  const isLogin = useSelector(state => state.auth.isLogin);
 
   return (
-<div>
-      <header className={ s.header }>
+    <div>
+      <header className={s.header}>
         <div className="container">
-          <nav className={ s.nav }>
-            { !isLogin ?
-              (<><UserInfoLogo /><UserInfo /><Burger /> </>)
-              : (<><Logo /> <Navigation /> </>) }
+          <nav className={s.nav}>
+            {isLogin ? (
+              <>
+                <UserInfoLogo />
+                <UserInfo />
+                <Burger />{' '}
+              </>
+            ) : (
+              <>
+                <Logo /> <Navigation />{' '}
+              </>
+            )}
           </nav>
         </div>
       </header>
-       <MobileNav />
-</div>
+      <MobileNav />
+    </div>
   );
 };
 

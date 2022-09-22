@@ -41,7 +41,6 @@ function RegistrationForm({ onSubmit }) {
         className={s.input}
         type="text"
         name="name"
-        minLength="6"
         maxLength="15"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
@@ -67,9 +66,8 @@ function RegistrationForm({ onSubmit }) {
         className={s.input}
         type="password"
         name="password"
-        minLength="6"
+        minLength="8"
         maxLength="15"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
         value={password}
         placeholder="Password *"
