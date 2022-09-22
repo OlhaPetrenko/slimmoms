@@ -5,6 +5,7 @@ export const productOperation = createAsyncThunk(
   'product-search',
   async (data, { rejectWithValue, getState }) => {
     const value = getState();
+    console.log(value);
     const accToken = value.auth.accessToken;
     const objData = {
       product: data,
