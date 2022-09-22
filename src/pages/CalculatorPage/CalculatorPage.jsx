@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { dailyRateUserOperation } from 'redux/dailyRate/dailyRate-operations';
 import DailyCaloriesForm from 'components/DailyCaloriesForm/DailyCaloriesForm';
+import Summary from 'components/Summary/Summary';
 
 const CalculatorPage = () => {
   const dispatch = useDispatch();
@@ -9,9 +10,12 @@ const CalculatorPage = () => {
     dispatch(dailyRateUserOperation(data));
   };
   return (
-    <div>
-      <DailyCaloriesForm onSubmit={onSubmit} />
-    </div>
+    <>
+      <div className="container">
+        <DailyCaloriesForm onSubmit={onSubmit} />
+      </div>
+      <Summary />
+    </>
   );
 };
 
