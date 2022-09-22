@@ -24,9 +24,7 @@ const Modal = ({ close, children }) => {
   return createPortal(
     <div className={s.overlay} onClick={closeModal}>
       <div className={s.modal}>
-        <span onClick={closeModal} className={s.close}>
-          X
-        </span>
+        <button onClick={closeModal} className={s.close} type="button"></button>
         {children}
       </div>
     </div>,
