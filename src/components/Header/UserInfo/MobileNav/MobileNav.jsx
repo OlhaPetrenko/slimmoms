@@ -7,7 +7,7 @@ const MobileNav = () => {
     <div className={ s.mobileNav }>
       <button className={ s.btnBack }><FiCornerDownLeft size="25px" /></button>
       <div className={ s.mobileNavInfo }>
-        <h2 className={ s.mobileNavName }>Name</h2>
+        <div className={ s.mobileNavName }>Name</div>
         <button className={ s.btnLogout }>Exit</button>
         <Burger />
       </div>
