@@ -50,9 +50,9 @@ function LoginForm({ onSubmit }) {
         className={s.input}
         type="password"
         name="password"
-        minlength="6"
-        maxlength="15"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+        minLength="6"
+        maxLength="15"
+        // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
         value={password}
         placeholder="Password *"

@@ -3,11 +3,11 @@ import { useState } from 'react';
 import s from './DailyCaloriesForm.module.scss';
 
 function DailyCaloriesForm({ onSubmit }) {
-  const [height, setHeight] = useState(null);
-  const [age, setAge] = useState(null);
-  const [weight, setWeight] = useState(null);
-  const [desiredWeight, setDesiredWeight] = useState(null);
-  const [blood, setBlood] = useState(null);
+  const [height, setHeight] = useState('');
+  const [age, setAge] = useState('');
+  const [weight, setWeight] = useState('');
+  const [desiredWeight, setDesiredWeight] = useState('');
+  const [blood, setBlood] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -15,11 +15,11 @@ function DailyCaloriesForm({ onSubmit }) {
     const data = { height, age, weight, desiredWeight, blood };
 
     onSubmit(data);
-    setHeight(null);
-    setAge(null);
-    setWeight(null);
-    setDesiredWeight(null);
-    setBlood(null);
+    setHeight('');
+    setAge('');
+    setWeight('');
+    setDesiredWeight('');
+    setBlood('');
   }
 
   function handleChange(event) {
@@ -54,6 +54,7 @@ function DailyCaloriesForm({ onSubmit }) {
           name="height"
           required
           autoFocus
+          min="0"
           // autoComplete="off"
           value={height}
           placeholder="Height*"
@@ -65,6 +66,7 @@ function DailyCaloriesForm({ onSubmit }) {
           type="number"
           name="age"
           required
+          min="0"
           value={age}
           placeholder="Age *"
           onChange={handleChange}
@@ -75,6 +77,7 @@ function DailyCaloriesForm({ onSubmit }) {
           type="number"
           name="weight"
           required
+          min="0"
           value={weight}
           placeholder="Current weight *"
           onChange={handleChange}
@@ -90,6 +93,7 @@ function DailyCaloriesForm({ onSubmit }) {
           type="number"
           name="desiredWeight"
           required
+          min="0"
           value={desiredWeight}
           placeholder="Desired weight *"
           onChange={handleChange}
