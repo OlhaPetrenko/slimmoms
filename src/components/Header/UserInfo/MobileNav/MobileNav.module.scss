@@ -1,0 +1,26 @@
+@import 'shared/styles';
+
+.mobileNav {
+  display: flex;
+  background-color: #eff1f3;
+  padding: 10px;
+  justify-content: space-around;
+  &Info {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.btnLogout,
+.btnBack {
+  background-color: transparent;
+}
+.btnBack {
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  background-color: transparent;
+  @include media-query(tablet) {
+    display: none;
+  }
+}

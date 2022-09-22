@@ -8,10 +8,12 @@ const UserInfo = () => {
   };
 
   return (
+
     <div className={ s.headerNavContainer }>
       <NavLink className={ activeNav } to="/diary">Diary</NavLink>
       <NavLink className={ activeNav } to="/calculator">Calculator</NavLink>
     </div>
+
   );
 }
 
