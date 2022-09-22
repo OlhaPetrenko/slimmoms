@@ -4,23 +4,59 @@
   display: flex;
   background-color: #eff1f3;
   padding: 10px;
-  justify-content: space-around;
-  &Info {
-    display: flex;
-    gap: 32px;
+  justify-content: center;
+  gap: 120px;
+  margin-bottom: 40px;
+  @include media-query(tablet) {
+    background-color: transparent;
+    margin-left: auto;
+    position: relative;
+    padding: 20px 32px 16px;
+    top: -78px;
   }
+  @include media-query(desktop) {
+    display: none;
+    visibility: hidden;
+  }
+  &Info {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  &Name {
+    margin: 0px 0px 0px 10px;
+    display: inline;
+    @extend %title-gonhamProBold;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    padding: 15px 16px 13px 0px;
+    border-right: 2px solid rgb(224, 224, 224);
+  }
+
 }
 
-.btnLogout,
-.btnBack {
+.btnLogout {
+  @extend %title-gonhamProBold;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+  color: rgb(155, 159, 170);
+  border: none;
   background-color: transparent;
+  padding: 4px 10px 0px 15px;
+  cursor: pointer;
+  z-index: 30;
 }
 .btnBack {
-  display: inline-block;
-  width: 12px;
-  height: 7px;
   background-color: transparent;
+  padding: 4px 10px 0px 15px;
+  cursor: pointer;
+  z-index: 30;
   @include media-query(tablet) {
     display: none;
+    visibility: hidden;
   }
 }

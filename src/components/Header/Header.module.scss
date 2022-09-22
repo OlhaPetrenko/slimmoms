@@ -3,8 +3,13 @@
 .header {
   margin-top: 20px;
   border-bottom: 2px solid #e0e0e0;
+  @include media-query(tablet) {
+    border-bottom:none;
+  }
+  &Wrapp {
+    margin-bottom: 50px;
+  }
 }
-
 .nav {
   display: flex;
   align-items: center;

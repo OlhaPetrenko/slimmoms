@@ -1,23 +1,18 @@
-import { FiCornerDownLeft } from 'react-icons/fi';
-import s from './MobileNav.module.scss';
-import { useDispatch } from 'react-redux';
-import { logoutUser } from 'redux/auth/auth-operation';
+import { FiCornerDownLeft } from "react-icons/fi";
+import Burger from "../Burger/Burger";
+import s from "./MobileNav.module.scss"
 
 const MobileNav = () => {
-  const dispatch = useDispatch();
   return (
-    <div className={s.mobileNav}>
-      <button className={s.btnBack}>
-        <FiCornerDownLeft />
-      </button>
-      <div className={s.mobileNavInfo}>
-        <div className={s.mobileNavName}>Nick</div>
-        <button onClick={() => dispatch(logoutUser)} className={s.btnLogout}>
-          Exit
-        </button>
+    <div className={ s.mobileNav }>
+      <button className={ s.btnBack }><FiCornerDownLeft size="25px" /></button>
+      <div className={ s.mobileNavInfo }>
+        <h2 className={ s.mobileNavName }>Name</h2>
+        <button className={ s.btnLogout }>Exit</button>
+        <Burger />
       </div>
     </div>
   );
-};
+}
 
 export default MobileNav;
