@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-
 import DiaryAddProductForm from 'components/DiaryAddProductForm/DiaryAddProductForm';
 import DiaryProductsList from 'components/DiaryProductsList/DiaryProductsList';
 import Summary from 'components/Summary/Summary';
@@ -14,7 +13,6 @@ const DiaryPage = () => {
 
   const onSubmit = data => {
     dispatch(dayProductPostOperation(data));
-
     dispatch(dayProductInfoOperation({ date: data.date }));
   };
   return (

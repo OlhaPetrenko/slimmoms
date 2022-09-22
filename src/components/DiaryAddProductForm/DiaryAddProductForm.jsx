@@ -29,7 +29,7 @@ function DiaryAddProductForm({ onSubmit }) {
 
   const onClickFetch = e => {
     setName(e.target.value);
-    if (productName !== '') {
+    if (e.target.value.replace(/ /g,'')) {
       dispatch(productOperation(e.target.value));
     }
   };
@@ -74,48 +74,48 @@ function DiaryAddProductForm({ onSubmit }) {
 
   return (
     <>
-      <form onSubmit={onClickSubmit} className={s.form}>
+      <form onSubmit={ onClickSubmit } className={ s.form }>
         <DatePicker
-          selected={startDate}
-          onChange={date => setStartDate(date)}
+          selected={ startDate }
+          onChange={ date => setStartDate(date) }
         />
         <input
-          onChange={onClickFetch}
-          value={productName}
-          className={s.input1}
+          onChange={ onClickFetch }
+          value={ productName }
+          className={ s.input1 }
           type="text"
           name="productName"
           placeholder="Enter product name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example - Poultry meat"
           required
-          id={productNameInputId}
+          id={ productNameInputId }
         />
 
         <input
-          onChange={hendleInputChange}
-          value={grams}
-          className={s.input2}
+          onChange={ hendleInputChange }
+          value={ grams }
+          className={ s.input2 }
           type="number"
           name="grams"
           placeholder="Grams"
           pattern="^\d+(?:\.\d+)?\s*(?:grams)$"
           required
-          id={gramsInputId}
+          id={ gramsInputId }
         />
-        <button className={s.btn1} type="submit">
+        <button className={ s.btn1 } type="submit">
           Add
         </button>
 
-        <button className={s.btn2} type="submit"></button>
+        <button className={ s.btn2 } type="submit"></button>
       </form>
       <ul>
-        {productName &&
+        { productName &&
           arrProducts?.map(el => (
-            <li key={el._id} onClick={onClickTakeNameProduct} id={el._id}>
-              {el.title.ru}
+            <li key={ el._id } onClick={ onClickTakeNameProduct } id={ el._id }>
+              { el.title.ru }
             </li>
-          ))}
+          )) }
       </ul>
     </>
   );

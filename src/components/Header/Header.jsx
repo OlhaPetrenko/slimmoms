@@ -3,7 +3,7 @@ import { Logo, UserInfo, Navigation, UserInfoLogo, MobileNav } from '/';
 import s from './Header.module.scss';
 
 const Header = () => {
-  const isLogin = true;
+  const isLogin = false;
   const dispatch = useDispatch()
 
 
@@ -12,7 +12,7 @@ const Header = () => {
       <header className={ s.header }>
         <div className="container">
           <nav className={ s.nav }>
-            { isLogin ? (
+            { !isLogin ? (
               <>
                 <UserInfoLogo />
                 <UserInfo />
@@ -25,7 +25,7 @@ const Header = () => {
           </nav>
         </div>
       </header>
-      {isLogin && <MobileNav /> }
+      {!isLogin && <MobileNav /> }
     </div>
   );
 };
