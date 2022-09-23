@@ -9,6 +9,7 @@ import {
 
 const initialState = {
   user: {},
+  userId: '',
   accessToken: '',
   refreshToken: '',
   sid: '',
@@ -44,6 +45,7 @@ const authSlice = createSlice({
       state.refreshToken = payload.refreshToken;
       state.sid = payload.sid;
       state.user = { ...state.user, ...payload.user };
+      state.userId = payload.user.id;
       state.isLoading = false;
       state.isLogin = true;
     },
@@ -57,7 +59,13 @@ const authSlice = createSlice({
       state.error = null;
     },
     [logoutUser.fulfilled]: (state, { payload }) => {
-      return initialState;
+      state.accessToken = '';
+      state.refreshToken = '';
+      state.sid = '';
+      state.user = initialState.user;
+      state.userId = '';
+      state.isLoading = false;
+      state.isLogin = false;
     },
     [logoutUser.rejected]: (state, { payload }) => {
       state.isLogin = false;

@@ -1,34 +1,36 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { dayProductDeleteOperation } from "redux/day/day-operations.js"
+import {
+  dayProductDeleteOperation,
+  dayProductInfoOperation,
+} from 'redux/day/day-operations.js';
 
+const DiaryProductsList = ({ date }) => {
+  const productList = useSelector(state => state.day.day.eatenProducts);
+  const productDayId = useSelector(state => state.day.day.id);
+  const dispatch = useDispatch();
 
-const DiaryProductsList = () => {
-  const productList = useSelector(state => state.day.day.eatenProducts)
-  const productId = useSelector(state => state.day.day)
-  const dispatch = useDispatch()
-
-  const onDeleteProductListItem = e => {
+  const onDeleteProductListItem = id => {
     const data = {
-      dayId: e.target.id,
-      eatenProductId: e.target.name,
-    }
-    dispatch(dayProductDeleteOperation(data))
-
-  }
+      dayId: productDayId,
+      eatenProductId: id,
+    };
+    dispatch(dayProductDeleteOperation(data));
+    dispatch(dayProductInfoOperation({ date }));
+  };
   return (
     <ul>
-      { productList?.map(({ title, weight, kcal, id, }) => (
-        <li key={ id }>
-          <p>{ title }</p>
-          <p>{ weight }g</p>
-          <p>{ kcal }kcal</p>
-          <button id={ productId.daySummary } name={ id }
-            onClick={ onDeleteProductListItem }>X</button>
-        </li>
-      ))
-      }
-    </ul >
+      {productList?.map(({ title, weight, kcal, id }) => {
+        return (
+          <li key={id}>
+            <p>{title}</p>
+            <p>{weight}g</p>
+            <p>{kcal}kcal</p>
+            <button onClick={() => onDeleteProductListItem(id)}>X</button>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

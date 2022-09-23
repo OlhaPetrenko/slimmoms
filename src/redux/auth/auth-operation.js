@@ -18,10 +18,12 @@ export const registerUser = createAsyncThunk(
 
 export const logInUser = createAsyncThunk(
   'auth/logIn',
-  async (data, { rejectWithValue }) => {
+  async (data, { rejectWithValue, dispatch }) => {
     try {
       const result = await login(data);
       console.log(result);
+      dispatch(userInfoOperation(result.accessToken));
+      dispatch(userInfoOperation(result.accessToken));
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -34,6 +36,7 @@ export const logoutUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const result = await logout();
+
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -49,7 +52,7 @@ export const refreshUser = createAsyncThunk(
     const refreshToken = value.auth.refreshToken;
     const sid = value.auth.sid;
     const data = { refreshToken, seasonid: { sid } };
-    // console.log(data);
+
     if (!sid) {
       return rejectWithValue(`token is invalid`);
     }

@@ -2,19 +2,33 @@ import { instance } from './auth-api';
 
 export const dayProductPost = async data => {
   const { data: result } = await instance.post('/day', data);
-  console.log(result);
-  return result;
-};
-//!!! Доработать
-export const dayProductDelete = async data => {
-  console.log(data);
-  const { data: result } = await instance.delete('/day', data);
-  console.log(result);
+
   return result;
 };
 
+// export const dayProductDelete = async data => {
+//   const { data: result } = await instance.delete('/day', data);
+//   console.log(result);
+//   return result;
+// };
+export async function dayProductDelete(data, accessToken) {
+  const formData = {
+    dayId: data.dayId,
+    eatenProductId: data.eatenProductId,
+  };
+  const serverData = await fetch('https://slimmom-backend.goit.global/day', {
+    method: 'DELETE',
+    body: JSON.stringify(formData),
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + accessToken,
+    },
+  });
+  return serverData;
+}
+
 export const dayProductInfo = async date => {
   const { data: result } = await instance.post('/day/info', date);
-  console.log(result);
+
   return result;
 };

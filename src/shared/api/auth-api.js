@@ -16,7 +16,7 @@ export const registration = async data => {
 export const login = async data => {
   const { data: result } = await instance.post('/auth/login', data);
   setToken(result.accessToken);
-  console.log(result);
+
   return result;
 };
 

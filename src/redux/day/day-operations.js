@@ -17,11 +17,26 @@ export const dayProductPostOperation = createAsyncThunk(
   }
 );
 
+// export const dayProductDeleteOperation = createAsyncThunk(
+//   'day/delete',
+//   async (data, { rejectWithValue }) => {
+//     console.log(data);
+//     try {
+//       const result = await dayProductDelete(data);
+//       return result;
+//     } catch (error) {
+//       return rejectWithValue(error);
+//     }
+//   }
+// );
 export const dayProductDeleteOperation = createAsyncThunk(
   'day/delete',
-  async (data, { rejectWithValue }) => {
+  async (data, { rejectWithValue, getState }) => {
+    const value = getState();
+    const accessToken = value.auth.accessToken;
+    console.log(data);
     try {
-      const result = await dayProductDelete(data);
+      const result = await dayProductDelete(data, accessToken);
       return result;
     } catch (error) {
       return rejectWithValue(error);

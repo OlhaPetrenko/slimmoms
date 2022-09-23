@@ -12,7 +12,7 @@ import userReducer from '../user/user.slice';
 const persistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['sid', 'accessToken', 'refreshToken'],
+  whitelist: ['sid', 'accessToken', 'refreshToken', 'userId'],
 };
 
 const persistedReducer = persistReducer(persistConfig, authReducer);

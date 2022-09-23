@@ -6,9 +6,9 @@ import {
 } from './day-operations';
 
 const initialState = {
-  eatenProduct: {},
   day: {},
   daySummary: {},
+  eatenProducts: {},
   isLoading: false,
   error: null,
 };
@@ -22,7 +22,9 @@ const daySlice = createSlice({
       state.error = null;
     },
     [dayProductPostOperation.fulfilled]: (state, { payload }) => {
-      return { ...payload, isLoading: false, error: null };
+      state.day = payload;
+      state.isLoading = false;
+      state.error = null;
     },
     [dayProductPostOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -33,10 +35,13 @@ const daySlice = createSlice({
       state.error = null;
     },
 
-    // Допрацювати!!!
+    [dayProductDeleteOperation.fulfilled]: (state, { meta }) => {
+      state.day.eatenProducts = state.day.eatenProducts.filter(
+        el => el.id !== meta.arg.eatenProductId
+      );
 
-    [dayProductDeleteOperation.fulfilled]: (state, { payload }) => {
-      state.daySummary = payload;
+      state.isLoading = false;
+      state.error = null;
     },
     [dayProductDeleteOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;

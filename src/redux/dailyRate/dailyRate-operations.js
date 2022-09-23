@@ -18,13 +18,14 @@ export const dailyRateUserOperation = createAsyncThunk(
   async (data, { rejectWithValue, getState }) => {
     const value = getState();
     const userId = value.user.userInfo.id;
-    console.log(userId);
+    console.log(data);
     const userData = {
       id: userId,
       user: data,
     };
     try {
       const result = await dailyUser(userData);
+      console.log(result);
       return result;
     } catch (error) {
       return rejectWithValue(error);
