@@ -37,7 +37,9 @@ function LoginForm({ onSubmit }) {
         className={s.input}
         type="email"
         name="email"
-        pattern="\S+@[a-z]+.[a-z]+"
+        // pattern="\S+@[a-z]+.[a-z]+"
+        pattern="[A-Za-z0-9]{6,}"
+        title="Login cannot be less than 6 Latin characters or numbers. For example - butterfly01"
         required
         autoFocus
         // autoComplete="off"
@@ -50,8 +52,10 @@ function LoginForm({ onSubmit }) {
         className={s.input}
         type="password"
         name="password"
-        minLength="8"
-        maxLength="15"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="The password cannot be less than 8 characters and must contain at least one number, one lowercase, and one uppercase Latin letter.. For example - Butterfly01"
+        // minLength="8"
+        // maxLength="15"
         required
         value={password}
         placeholder="Password *"

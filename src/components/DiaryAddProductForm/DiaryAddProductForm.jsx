@@ -71,8 +71,9 @@ function DiaryAddProductForm({ onSubmit }) {
           type="text"
           name="productName"
           placeholder="Enter product name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example - Poultry meat"
+          // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Zа-яА-Я]+(([' - \%][[a-zA-Zа-яА-Я0-9])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash, percentage and spaces. For example - Творог 0.6% (маложирный)"
           required
           id={productNameInputId}
         />

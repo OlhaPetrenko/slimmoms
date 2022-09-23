@@ -152,7 +152,7 @@ function DailyCaloriesForm({ onSubmit }) {
             id="desiredWeight"
           />
           <label className={s.formLabel} htmlFor="desiredWeight">
-            Current weight *
+            Desired weight *
           </label>
         </div>
 
