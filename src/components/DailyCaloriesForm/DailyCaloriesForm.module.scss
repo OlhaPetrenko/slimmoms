@@ -1,5 +1,5 @@
-// @import '../../common.scss';
-@import '../../shared/styles/index';
+@import '../../common.scss';
+// @import '../../shared/styles/index';
 
 .form {
   display: flex;
@@ -15,9 +15,6 @@
     margin-right: auto;
     width: 240px;
     margin-left: 0;
-  }
-  @include media-query(desktop) {
-    // flex-direction: row;
   }
 }
 .helper {
@@ -38,36 +35,36 @@
   }
 }
 
-.input {
-  border: transparent;
-  border-bottom: 1px solid rgba(224, 224, 224, 1);
-  outline: transparent;
+// .input {
+//   border: transparent;
+//   border-bottom: 1px solid rgba(224, 224, 224, 1);
+//   outline: transparent;
 
-  @include media-query(mobile) {
-    min-width: 240px;
-    padding-bottom: 8px;
-  }
-  @include media-query(tablet) {
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 20px;
-    width: 240px;
-    margin-left: 0;
-  }
-  @include media-query(desktop) {
-  }
-}
+//   @include media-query(mobile) {
+//     min-width: 240px;
+//     padding-bottom: 8px;
+//   }
+//   @include media-query(tablet) {
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding-bottom: 20px;
+//     width: 240px;
+//     margin-left: 0;
+//   }
+//   @include media-query(desktop) {
+//   }
+// }
 
-.input::placeholder {
-  //   font-family: 'Verdana';
+// .input::placeholder {
+//   //   font-family: 'Verdana';
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.21;
-  letter-spacing: 0.04em;
+//   font-weight: 700;
+//   font-size: 14px;
+//   line-height: 1.21;
+//   letter-spacing: 0.04em;
 
-  color: $color-secondary;
-}
+//   color: $color-secondary;
+// }
 
 .radioText {
   //   font-family: 'Verdana';
@@ -124,6 +121,8 @@
 }
 
 .btnActiveRight {
+  font-family: 'Verdana';
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
@@ -164,7 +163,7 @@
   display: inline-flex;
   align-items: center;
   user-select: none;
-  color: $color-accent;
+  color: $color-secondary;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
@@ -174,6 +173,7 @@
 .radioSpan::before {
   content: '';
   display: inline-block;
+
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -193,4 +193,58 @@
 .radioLabel > .radioInput:checked + .radioSpan::before {
   //   border-color: $color-accent;
   background-image: url('../../shared/images/mainPage/Ellipse\ 2.svg');
+}
+.radioLabel > .radioInput:focus + .radioSpan {
+  color: $color-accent;
+}
+
+// ===================form
+.formItem {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+}
+
+.formInput {
+  width: 100%;
+  border: transparent;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  outline: transparent;
+
+  @include media-query(mobile) {
+    min-width: 240px;
+    padding-bottom: 8px;
+  }
+  @include media-query(tablet) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    width: 240px;
+    margin-left: 0;
+  }
+}
+
+.formLabel {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.5s;
+  //   font-family: 'Verdana';
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: $color-secondary;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:not(:focus):valid ~ .formLabel {
+  top: -20px;
+  font-size: 10px;
+  color: $color-accent;
 }
