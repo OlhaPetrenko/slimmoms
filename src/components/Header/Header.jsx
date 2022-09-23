@@ -1,32 +1,32 @@
-import { Logo, UserInfo, Navigation, Burger } from '/';
+import { useDispatch, useSelect } from 'react-redux';
+import { Logo, UserInfo, Navigation, UserInfoLogo, MobileNav } from '/';
 import s from './Header.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from 'redux/auth/auth-operation';
 
 const Header = () => {
-  // const isLogin = false;
-  const dispatch = useDispatch();
-  const isLogin = useSelector(state => state.auth.isLogin);
+  const isLogin = false;
+  const dispatch = useDispatch()
+
 
   return (
-    <header className={s.header}>
-      <div className="container">
-        <nav className={s.nav}>
-          <Logo />
-          {isLogin ? (
-            <>
-              <UserInfo />
-              <Burger />
-            </>
-          ) : (
-            <Navigation />
-          )}
-          <button type="button" onClick={() => dispatch(logoutUser())}>
-            LogOut
-          </button>
-        </nav>
-      </div>
-    </header>
+    <div>
+      <header className={ s.header }>
+        <div className="container">
+          <nav className={ s.nav }>
+            { !isLogin ? (
+              <>
+                <UserInfoLogo />
+                <UserInfo />
+              </>
+            ) : (
+              <>
+                <Logo /> <Navigation />
+              </>
+            ) }
+          </nav>
+        </div>
+      </header>
+      {!isLogin && <MobileNav /> }
+    </div>
   );
 };
 

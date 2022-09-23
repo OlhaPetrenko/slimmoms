@@ -1,23 +1,29 @@
 import { useDispatch } from 'react-redux';
-
 import DiaryAddProductForm from 'components/DiaryAddProductForm/DiaryAddProductForm';
 import DiaryProductsList from 'components/DiaryProductsList/DiaryProductsList';
-import Calendar from 'components/Calendar/Calendar';
+import Summary from 'components/Summary/Summary';
 
-import { productOperation } from 'redux/product/product-operations';
+import {
+  dayProductInfoOperation,
+  dayProductPostOperation,
+} from 'redux/day/day-operations';
 
 const DiaryPage = () => {
   const dispatch = useDispatch();
 
   const onSubmit = data => {
-    dispatch(productOperation(data.productName));
+    dispatch(dayProductPostOperation(data));
+    dispatch(dayProductInfoOperation({ date: data.date }));
   };
   return (
-    <div className="container">
-      <Calendar />
-      <DiaryAddProductForm onSubmit={onSubmit} />
-      <DiaryProductsList />
-    </div>
+    <>
+      <div className="container">
+        <DiaryAddProductForm onSubmit={onSubmit} />
+        <DiaryProductsList />
+      </div>
+
+      <Summary />
+    </>
   );
 };
 

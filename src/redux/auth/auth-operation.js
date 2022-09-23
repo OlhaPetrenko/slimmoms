@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { registration, login, logout, refresh } from 'shared/api/auth-api';
+import { userInfoOperation } from 'redux/user/user-operations';
 
 export const registerUser = createAsyncThunk(
   'auth/register',
@@ -42,7 +43,7 @@ export const logoutUser = createAsyncThunk(
 
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
-  async (_, { rejectWithValue, getState }) => {
+  async (_, { rejectWithValue, getState, dispatch }) => {
     const value = getState();
 
     const refreshToken = value.auth.refreshToken;
@@ -54,7 +55,7 @@ export const refreshUser = createAsyncThunk(
     }
     try {
       const result = await refresh(data);
-
+      dispatch(userInfoOperation(result.newAccessToken));
       return result;
     } catch (error) {
       return rejectWithValue(error.message);

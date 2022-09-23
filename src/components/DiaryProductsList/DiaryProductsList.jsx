@@ -1,17 +1,34 @@
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { dayProductDeleteOperation } from "redux/day/day-operations.js"
 
-const DiaryProductsList = ({ productList, onDeleteProductListItem }) => {
+
+const DiaryProductsList = () => {
+  const productList = useSelector(state => state.day.day.eatenProducts)
+  const productId = useSelector(state => state.day.day)
+  const dispatch = useDispatch()
+
+  const onDeleteProductListItem = e => {
+    const data = {
+      dayId: e.target.id,
+      eatenProductId: e.target.name,
+    }
+    dispatch(dayProductDeleteOperation(data))
+
+  }
   return (
     <ul>
-      {productList?.map(({ id, productName, grams }) => (
-        <li key={id}>
-          <p>{productName}</p>
-          <p>{grams}</p>
-          <p>Calorie content of the product</p>
-          <button onClick={() => onDeleteProductListItem(id)}>X</button>
+      { productList?.map(({ title, weight, kcal, id, }) => (
+        <li key={ id }>
+          <p>{ title }</p>
+          <p>{ weight }g</p>
+          <p>{ kcal }kcal</p>
+          <button id={ productId.daySummary } name={ id }
+            onClick={ onDeleteProductListItem }>X</button>
         </li>
-      ))}
-    </ul>
+      ))
+      }
+    </ul >
   );
 };
 

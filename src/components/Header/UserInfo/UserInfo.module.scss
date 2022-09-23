@@ -15,6 +15,7 @@
     text-align: right;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    display: none;
     &.active {
       transition: 0.8s;
       color: $color-primary;
@@ -24,5 +25,9 @@
       scale: 1.1;
       color: $color-primary;
     }
+    @include media-query(desktop) {
+      display: block;
+    }
   }
 }
+

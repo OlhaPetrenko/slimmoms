@@ -4,6 +4,17 @@
   display: flex;
   justify-content: flex-start;
   margin-right: 40px;
+  // &:after {
+  //   content: '';
+  //   background-color: rgb(196, 196, 196);
+  //   height: 2px;
+  //   width: 32px;
+  //   display: block;
+  //   transform: rotate(90deg);
+  //   position: relative;
+  //   left: 30px;
+  //   top: 60px;
+  // }
   &Img {
     width: 46.67px;
     height: 44px;

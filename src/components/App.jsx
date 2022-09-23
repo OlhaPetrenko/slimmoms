@@ -11,6 +11,13 @@ import { useDispatch } from 'react-redux';
 
 import Header from './Header/Header';
 
+import UserRoutes from './UserRouts/UserRoutes';
+
+// import MainPage from '../pages/MainPage/MainPage';
+// import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
+
+// import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
+
 // import MainPage from '../pages/MainPage/MainPage';
 // import RegistrationPage from '../pages/RegistrationPage/RegistrationPage';
 
@@ -18,22 +25,25 @@ import Header from './Header/Header';
 // import Calendar from './Calendar/Calendar';
 // import Summary from './Summary/Summary';
 
-import UserRoutes from './UserRouts/UserRoutes';
 import { refreshUser } from 'redux/auth/auth-operation';
-import { userInfoOperation } from 'redux/user/user-operations';
+
 export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshUser());
-    dispatch(userInfoOperation());
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
+    // <div className="container">
+
     <>
       <Header />
       <UserRoutes />
     </>
+
+    // </div>
   );
 };
 
