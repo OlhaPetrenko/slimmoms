@@ -1,0 +1,73 @@
+@import '../../common.scss';
+
+.button {
+  width: 210px;
+  height: 43px;
+  color: #ffffff;
+  background: #fc842d;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border-radius: 30px;
+}
+.border {
+  border-top: 1px solid #e0e0e0;
+}
+
+@import '../../shared/styles/index';
+
+.section {
+  @include media-query(tablet) {
+    padding-top: 116px;
+    padding-bottom: 398px;
+
+    background-image: url(../../shared/images/mainPage/strawberry_md.png),
+      url(../../shared/images/mainPage/banana_md.png),
+      url(../../shared/images/mainPage/leaves_md.png),
+      url(../../shared/images/mainPage/vector_md.svg);
+
+    @include media-query(retina) {
+      background-image: url(../../shared/images/mainPage/strawberry_md@2x.png),
+        url(../../shared/images/mainPage/banana_md@2x.png),
+        url(../../shared/images/mainPage/leaves_md@2x.png),
+        url(../../shared/images/mainPage/vector_md.svg);
+    }
+    background-size: 308px 303px, 493px 432px, 601px 532px, 570px 566px;
+    background-repeat: no-repeat;
+    background-position: bottom 185px right 35px, bottom 0 right 0,
+      bottom 0 left 0, bottom 0 right 0;
+  }
+  @include media-query(desktop) {
+    padding-top: 147px;
+    padding-bottom: 111px;
+
+    background-image: url(../../shared/images/loginRegistrForm/group_lg.png),
+      url(../../shared/images/loginRegistrForm/vector_lg.svg);
+
+    @include media-query(retina) {
+      background-image: url(../../shared/images/loginRegistrForm/group_lg@2x.png),
+        url(../../shared/images/loginRegistrForm/vector_lg.svg);
+    }
+    background-size: 980px 820px, 602px 816px;
+    background-repeat: no-repeat;
+    background-position: top 0 right 0;
+  }
+}
+
+.formTitle {
+  //   font-family: 'Verdana';
+  text-align: start;
+  color: $color-primary;
+  letter-spacing: 0.04em;
+  @include media-query(mobile) {
+    font-size: 18px;
+    line-height: 1.21;
+    font-weight: 700;
+    width: 280px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  @include media-query(tablet) {
+    font-size: 34px;
+    margin-bottom: 68px;
+    width: 500px;
+  }
+}

@@ -1,21 +1,17 @@
 // import PropTypes from 'prop-types';
 import { useState } from 'react';
 import s from './RegistrationForm.module.scss';
-import { useDispatch } from 'react-redux';
-import { registerUser } from 'redux/auth/auth-operation';
 
-function RegistrationForm() {
+function RegistrationForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const disparch = useDispatch();
 
   function handleSubmit(event) {
     event.preventDefault();
 
     const data = { email, password, username: name };
-
-    disparch(registerUser(data));
+    onSubmit(data);
     setName('');
     setEmail('');
     setPassword('');
@@ -45,6 +41,9 @@ function RegistrationForm() {
         className={s.input}
         type="text"
         name="name"
+        minLength="6"
+        maxLength="15"
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
         autoFocus
         autoComplete="off"
@@ -56,6 +55,7 @@ function RegistrationForm() {
         className={s.input}
         type="email"
         name="email"
+        pattern="\S+@[a-z]+.[a-z]+"
         required
         autoComplete="off"
         value={email}
@@ -67,6 +67,9 @@ function RegistrationForm() {
         className={s.input}
         type="password"
         name="password"
+        minLength="6"
+        maxLength="15"
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         required
         value={password}
         placeholder="Password *"

@@ -13,9 +13,9 @@ function DiaryAddProductForm({ onSubmit }) {
   const gramsInputId = nanoid();
 
   const hendleInputChange = e => {
-    const { productName, value } = e.currentTarget;
+    const { name, value } = e.currentTarget;
 
-    switch (productName) {
+    switch (name) {
       case 'productName':
         setName(value);
         break;
@@ -47,10 +47,10 @@ function DiaryAddProductForm({ onSubmit }) {
     <form onSubmit={onClickSubmit} className={s.form}>
       <input
         onChange={hendleInputChange}
-        // value={productName}
-        className={s.input}
+        value={productName}
+        className={s.input1}
         type="text"
-        name="name"
+        name="productName"
         placeholder="Enter product name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example - Poultry meat"
@@ -59,18 +59,20 @@ function DiaryAddProductForm({ onSubmit }) {
       />
       <input
         onChange={hendleInputChange}
-        // value={grams}
-        className={s.input}
+        value={grams}
+        className={s.input2}
         type="number"
-        name="Product weight"
+        name="grams"
         placeholder="Grams"
         pattern="^\d+(?:\.\d+)?\s*(?:grams)$"
         required
         id={gramsInputId}
       />
-      <button className={s.btn} type="submit">
+      <button className={s.btn1} type="submit">
         Add
       </button>
+
+      <button className={s.btn2} type="submit"></button>
     </form>
   );
 }

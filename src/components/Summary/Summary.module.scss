@@ -1,0 +1,53 @@
+@import '../../common.scss';
+
+.summary {
+  background-color: $bg-color-secondary;
+
+  @include media-query(tablet) {
+    display: flex;
+  }
+}
+.summary_table {
+  padding-top: 40px;
+
+  @include media-query(tablet) {
+    padding-top: 0px;
+    padding-bottom: 80px;
+  }
+}
+.summary_title {
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: $color-primary;
+  margin-bottom: 20px;
+
+  @include media-query(tablet) {
+    padding-top: 80px;
+  }
+}
+
+.summary_text {
+  color: #9b9faa;
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  width: 100%;
+}
+
+.summary_recommendation {
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  @include media-query(tablet) {
+    padding-top: 0px;
+    position: relative;
+    left: 200px;
+  }
+}
