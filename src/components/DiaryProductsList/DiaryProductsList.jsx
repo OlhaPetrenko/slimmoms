@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
+
+import s from './DiaryProductsList.module.scss';
+
 import {
   dayProductDeleteOperation,
   dayProductInfoOperation,
@@ -19,18 +22,25 @@ const DiaryProductsList = ({ date }) => {
     dispatch(dayProductInfoOperation({ date }));
   };
   return (
-    <ul>
-      {productList?.map(({ title, weight, kcal, id }) => {
-        return (
-          <li key={id}>
-            <p>{title}</p>
-            <p>{weight}g</p>
-            <p>{kcal}kcal</p>
-            <button onClick={() => onDeleteProductListItem(id)}>X</button>
-          </li>
-        );
-      })}
-    </ul>
+    <div>
+      <ul className={s.productsList}>
+        {productList?.map(({ title, weight, kcal, id }) => {
+          return (
+            <li key={id} className={s.productsItem}>
+              <p className={s.productsItem_title}>{title}</p>
+              <p className={s.productsItem_weight}>{weight} g</p>
+              <p className={s.productsItem_cal}>
+                {Math.max(kcal.toFixed(0), 0)} kcal
+              </p>
+              <button
+                onClick={() => onDeleteProductListItem(id)}
+                className={s.btn}
+              ></button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

@@ -4,6 +4,8 @@ import { Navigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+import s from './DiaryPage.module.scss';
+
 import DiaryAddProductForm from 'components/DiaryAddProductForm/DiaryAddProductForm';
 import DiaryProductsList from 'components/DiaryProductsList/DiaryProductsList';
 import Summary from 'components/Summary/Summary';
@@ -37,6 +39,7 @@ const DiaryPage = () => {
     <>
       <div className="container">
         <DatePicker
+          className={s.DatePicker}
           selected={startDate}
           onChange={date => setStartDate(date)}
         />
