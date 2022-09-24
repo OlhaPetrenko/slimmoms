@@ -100,40 +100,6 @@ function DailyCaloriesForm({ onSubmit }) {
           </label>
         </div>
 
-        {/* <input
-          className={s.input}
-          type="number"
-          name="height"
-          required
-          autoFocus
-          min="0"
-          // autoComplete="off"
-          value={height}
-          placeholder="Height*"
-          onChange={handleChange}
-        />
-
-        <input
-          className={s.input}
-          type="number"
-          name="age"
-          required
-          min="0"
-          value={age}
-          placeholder="Age *"
-          onChange={handleChange}
-        />
-
-        <input
-          className={s.input}
-          type="number"
-          name="weight"
-          required
-          min="0"
-          value={weight}
-          placeholder="Current weight *"
-          onChange={handleChange}
-        /> */}
         <button type="submit" className={s.btnActiveLeft}>
           Start losing weight
         </button>
@@ -152,20 +118,10 @@ function DailyCaloriesForm({ onSubmit }) {
             id="desiredWeight"
           />
           <label className={s.formLabel} htmlFor="desiredWeight">
-            Current weight *
+            Desired weight *
           </label>
         </div>
 
-        {/* <input
-          className={s.input}
-          type="number"
-          name="desiredWeight"
-          required
-          min="0"
-          value={desiredWeight}
-          placeholder="Desired weight *"
-          onChange={handleChange}
-        /> */}
         <div>
           <p className={s.radioText}>Blood type *</p>
           <div className={s.radioGroup}>
