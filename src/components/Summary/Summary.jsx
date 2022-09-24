@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import s from './Summary.module.scss';
 
-const Summary = () => {
+const Summary = ({ date }) => {
   const summDaySumm = useSelector(state => state.day.day.daySummary);
   const summNotAllowed = useSelector(
     state => state.dailyRate.notAllowedProducts
@@ -14,11 +14,11 @@ const Summary = () => {
       <div className="container">
         <div className={s.summary_contant}>
           <div className={s.summary_table}>
-            <h2 className={s.summary_title}>Summary for DATA</h2>
+            <h2 className={s.summary_title}>Summary for {date}</h2>
             <table className={s.summary_text}>
               <tbody>
                 <tr>
-                  <td>Left</td>
+                  <td className={s.summary_column}>Left</td>
                   <td>
                     {Boolean(summDaySumm)
                       ? Math.max(summDaySumm.kcalLeft.toFixed(0), 0)
