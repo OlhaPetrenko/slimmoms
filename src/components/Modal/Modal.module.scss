@@ -9,6 +9,7 @@
   overflow: hidden;
   @include media-query(mobile-only) {
     margin-top: 110px;
+    background-color: #fff;
   }
   position: fixed;
   top: 0px;
