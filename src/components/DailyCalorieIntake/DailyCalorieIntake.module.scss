@@ -1,7 +1,7 @@
 @import '../../common.scss';
 
 .title {
-  font-family: 'Verdana';
+  font-family: 'VerdanaBold';
   font-weight: 700;
   font-size: 18px;
   line-height: 1.44;
@@ -15,27 +15,36 @@
     margin-bottom: 20px;
   }
 }
-
+.wrapper {
+  margin: 0 auto;
+  width: 280px;
+  @include media-query(tablet) {
+    width: 330px;
+  }
+}
 .dailyRate {
-  font-family: 'Verdana';
+  font-family: 'VerdanaBold';
   font-weight: 700;
   font-size: 48px;
   line-height: 1.21;
   text-align: center;
   letter-spacing: 0.04em;
   color: $color-secondary-accent;
-  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e0e0e0;
 }
 .kcal {
   font-size: 14px;
   font-weight: 700;
 }
+.list {
+  padding-left: 20px;
+}
 .titleList {
-  border-top: 1px solid #e0e0e0;
-  padding-top: 20px;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 280px;
-  font-family: 'Verdana';
+  font-family: 'VerdanaBold';
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
@@ -58,6 +67,12 @@
 }
 
 .button {
+  font-family: 'Verdana';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  padding: 13px 25px;
   margin-top: 20px;
   width: 210px;
   height: 43px;
