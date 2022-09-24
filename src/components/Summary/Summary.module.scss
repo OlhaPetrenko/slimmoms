@@ -4,7 +4,6 @@
   background-color: $bg-color-secondary;
 
   @include media-query(tablet) {
-    // padding-top: 176px;
     // padding-bottom: 495px;
 
     background-image: url(../../shared/images/DiaryPage/Layer_md_1x.png);
