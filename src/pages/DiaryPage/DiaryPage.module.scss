@@ -1,0 +1,28 @@
+@import '../../common.scss';
+
+.DatePicker {
+  border: none;
+  margin-top: 40px;
+
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+  color: $color-primary;
+  background-image: url(../../shared/images/DiaryPage/calendar.png);
+  background-size: 18px 20px;
+  background-repeat: no-repeat;
+  background-position: 137px;
+
+  @include media-query(tablet) {
+    margin-top: 100px;
+    font-size: 34px;
+    line-height: 1.21;
+    background-position: 240px;
+  }
+
+  @include media-query(desktop) {
+    margin-top: 147px;
+  }
+}
