@@ -75,7 +75,6 @@ function DiaryAddProductForm({ onSubmit }) {
           required
           id={productNameInputId}
         />
-
         <input
           onChange={hendleInputChange}
           value={grams}
@@ -94,10 +93,16 @@ function DiaryAddProductForm({ onSubmit }) {
 
         <button className={s.btn2} type="submit"></button>
       </form>
-      <ul>
+
+      <ul className={s.productsList}>
         {productName &&
           arrProducts?.map(el => (
-            <li key={el._id} onClick={onClickTakeNameProduct} id={el._id}>
+            <li
+              key={el._id}
+              onClick={onClickTakeNameProduct}
+              id={el._id}
+              className={s.productsList_item}
+            >
               {el.title.ru}
             </li>
           ))}

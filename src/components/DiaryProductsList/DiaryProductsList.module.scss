@@ -4,18 +4,17 @@
   display: inline-block;
   height: 200px;
   overflow: scroll;
+  margin-top: 32px;
 
   @include media-query(tablet) {
     height: 244px;
+    margin-top: 60px;
   }
 
   @include media-query(desktop) {
-    height: 271px;
+    height: 600px;
   }
 }
-// .productsList:not(:last-child) {
-//   margin-bottom: 20px;
-// }
 
 .productsItem {
   display: flex;
