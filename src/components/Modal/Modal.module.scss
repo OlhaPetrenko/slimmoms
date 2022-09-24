@@ -7,16 +7,11 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  @include media-query(mobile-only) {
-    margin-top: 110px;
-    background-color: #fff;
-  }
   position: fixed;
   top: 0px;
   right: 0;
-  z-index: 99;
-  backdrop-filter: invert(10%);
-  // backdrop-filter: blur(2px);
+  z-index: 10;
+  background-color: rgba(33, 33, 33, 0.12);
 }
 
 .modal {
@@ -29,7 +24,8 @@
   padding: 40px 20px 120px;
 
   @include media-query(mobile-only) {
-    margin-top: -4px;
+    width: 100%;
+    margin-top: 110px;
   }
 
   @include media-query(tablet) {
@@ -38,18 +34,25 @@
 }
 
 .close {
-  display: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  @include media-query(mobile-only) {
+    top: -22px;
+    left: 20px;
+  }
+  background-color: transparent;
+  background-image: url('../../shared/images/arrow.svg');
   @include media-query(tablet) {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
     top: 20px;
     right: 20px;
     width: 20px;
     height: 20px;
     fill: #000;
-    background-color: #fff;
+
     cursor: pointer;
     background-image: url('../../shared/images/close.svg');
     background-position: center;
