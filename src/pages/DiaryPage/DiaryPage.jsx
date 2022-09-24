@@ -44,7 +44,7 @@ const DiaryPage = () => {
         <DiaryProductsList date={date} />
       </div>
 
-      <Summary />
+      <Summary date={date} />
     </>
   );
 };
