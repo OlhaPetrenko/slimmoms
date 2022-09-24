@@ -36,45 +36,67 @@ function RegistrationForm({ onSubmit }) {
 
   return (
     <form className={s.form} onSubmit={handleSubmit}>
-      <input
-        className={s.input}
-        type="text"
-        name="name"
-        maxLength="15"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я0-9])?[a-zA-Zа-яА-Я0-9]*)*$"
-        required
-        autoFocus
-        autoComplete="off"
-        value={name}
-        placeholder="Name *"
-        onChange={handleChange}
-      />
-      <input
-        className={s.input}
-        type="email"
-        name="email"
-        pattern="\S+@[a-z]+\.[a-z]+"
-        title="The email must contain only Latin lowercase letters, @ and  a dot without spacesю  For example - butterfly@mail.com"
-        required
-        autoComplete="off"
-        value={email}
-        placeholder="Email *"
-        onChange={handleChange}
-      />
-
-      <input
-        className={s.input}
-        type="password"
-        name="password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-        title="The password cannot be less than 8 characters and must contain at least one number, one lowercase, and one uppercase Latin letter. For example - Butterfly01"
-        // minLength="8"
-        // maxLength="15"
-        required
-        value={password}
-        placeholder="Password *"
-        onChange={handleChange}
-      />
+      <div className={s.formItem}>
+        <input
+          className={s.formInput}
+          type="text"
+          name="name"
+          value={name}
+          id="name"
+          required
+          pattern="[A-Za-z0-9]{6,}"
+          title="Name cannot be less than 6 Latin characters or numbers. For example - butterfly01"
+          onChange={handleChange}
+        />
+        <label className={s.formLabel} htmlFor="name">
+          Name *
+        </label>
+        <div className={s.formText}>
+          cannot be less than 6 Latin characters or numbers. For example -
+          butterfly01
+        </div>
+      </div>
+      <div className={s.formItem}>
+        <input
+          className={s.formInput}
+          type="email"
+          name="email"
+          value={email}
+          id="email"
+          required
+          pattern="\S+@[a-z]+\.[a-z]+"
+          title="The email must contain only Latin lowercase letters, @ and  a dot without spaces.  For example - butterfly@mail.com"
+          onChange={handleChange}
+        />
+        <label className={s.formLabel} htmlFor="email">
+          Email *
+        </label>
+        <div className={s.formText}>
+          must contain only Latin lowercase letters, @ and a dot without spaces.
+          For example - butterfly@mail.com
+        </div>
+      </div>
+      <div className={s.formItem}>
+        <input
+          className={s.formInput}
+          type="password"
+          name="password"
+          value={password}
+          id="password"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="The password cannot be less than 8 characters and must contain at least one number, one lowercase, and one uppercase Latin letter. For example - Butterfly01"
+          onChange={handleChange}
+        />
+        <label className={s.formLabel} htmlFor="password">
+          Password *
+        </label>
+        <div className={s.formText}>
+          cannot be less than 8 characters and must contain at least one number,
+          one lowercase, and one uppercase Latin letter. For example -
+          Butterfly01
+        </div>
+      </div>
 
       <div className={s.btnGroup}>
         <button type="submit" className={s.btn}>

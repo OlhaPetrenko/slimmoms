@@ -5,11 +5,21 @@
   flex-direction: column;
   gap: 40px;
 }
-.input {
+
+.formItem {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+}
+
+.formInput {
+  width: 100%;
   border: transparent;
   border-bottom: 1px solid rgba(224, 224, 224, 1);
   outline: transparent;
   padding-bottom: 20px;
+
   @include media-query(mobile) {
     width: 280px;
     margin-left: auto;
@@ -19,18 +29,57 @@
     width: 240px;
     margin-left: 0;
   }
-  @include media-query(desktop) {
-  }
 }
 
-.input::placeholder {
-  font-family: 'Verdana';
+.formLabel {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.5s;
+  //   font-family: 'Verdana';
 
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
   letter-spacing: 0.04em;
   color: $color-secondary;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:not(:focus):valid ~ .formLabel {
+  top: -20px;
+  font-size: 10px;
+  color: $color-accent;
+}
+.formText {
+  display: none;
+}
+.formInput:focus:valid ~ .formText {
+  display: none;
+}
+
+.formInput:focus ~ .formText {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.5s;
+  //   font-family: 'Verdana';
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  color: $color-secondary;
+  top: 40px;
+  font-size: 10px;
+  color: red;
 }
 
 .btnGroup {
