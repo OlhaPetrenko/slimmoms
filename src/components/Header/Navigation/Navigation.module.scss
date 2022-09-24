@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 13px;
+    line-height: 1.44;
     text-align: right;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -23,6 +23,13 @@
       transition: 0.8s;
       scale: 1.1;
       color: $color-primary;
+    }
+    @include media-query(tablet) {
+      display: flex;
+      padding: 10px 0;
+    }
+    @include media-query(desktop) {
+      padding: 10px 0;
     }
   }
 }
