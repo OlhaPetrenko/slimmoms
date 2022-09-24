@@ -38,13 +38,15 @@ const DiaryPage = () => {
   return (
     <>
       <div className="container">
-        <DatePicker
-          className={s.DatePicker}
-          selected={startDate}
-          onChange={date => setStartDate(date)}
-        />
-        <DiaryAddProductForm onSubmit={onSubmit} />
-        <DiaryProductsList date={date} />
+        <section className={s.section}>
+          <DatePicker
+            className={s.DatePicker}
+            selected={startDate}
+            onChange={date => setStartDate(date)}
+          />
+          <DiaryAddProductForm onSubmit={onSubmit} />
+          <DiaryProductsList date={date} />
+        </section>
       </div>
 
       <Summary date={date} />

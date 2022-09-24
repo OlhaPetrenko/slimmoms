@@ -8,7 +8,7 @@ import {
 const initialState = {
   day: {},
   daySummary: {},
-  eatenProducts: {},
+  eatenProduct: {},
   isLoading: false,
   error: null,
 };
@@ -22,9 +22,12 @@ const daySlice = createSlice({
       state.error = null;
     },
     [dayProductPostOperation.fulfilled]: (state, { payload }) => {
-      state.day = payload;
+      state.day = payload.day;
+      state.daySummary = payload.daySummary;
+      state.eatenProduct = payload.eatenProduct;
       state.isLoading = false;
       state.error = null;
+      // return { ...payload, isLoading: false, error: null };
     },
     [dayProductPostOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;
@@ -35,7 +38,7 @@ const daySlice = createSlice({
       state.error = null;
     },
 
-    [dayProductDeleteOperation.fulfilled]: (state, { meta }) => {
+    [dayProductDeleteOperation.fulfilled]: (state, { _, meta }) => {
       state.day.eatenProducts = state.day.eatenProducts.filter(
         el => el.id !== meta.arg.eatenProductId
       );
@@ -53,6 +56,7 @@ const daySlice = createSlice({
     },
     [dayProductInfoOperation.fulfilled]: (state, { payload }) => {
       state.day = payload;
+      state.daySummary = payload.daySummary;
       state.isLoading = false;
     },
     [dayProductInfoOperation.rejected]: (state, { payload }) => {

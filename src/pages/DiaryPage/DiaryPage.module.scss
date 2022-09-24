@@ -1,5 +1,10 @@
 @import '../../common.scss';
 
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .DatePicker {
   border: none;
   margin-top: 40px;
@@ -23,6 +28,6 @@
   }
 
   @include media-query(desktop) {
-    margin-top: 147px;
+    margin-top: 0px;
   }
 }

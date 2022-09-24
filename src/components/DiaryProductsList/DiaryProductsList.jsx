@@ -22,25 +22,23 @@ const DiaryProductsList = ({ date }) => {
     dispatch(dayProductInfoOperation({ date }));
   };
   return (
-    <div>
-      <ul className={s.productsList}>
-        {productList?.map(({ title, weight, kcal, id }) => {
-          return (
-            <li key={id} className={s.productsItem}>
-              <p className={s.productsItem_title}>{title}</p>
-              <p className={s.productsItem_weight}>{weight} g</p>
-              <p className={s.productsItem_cal}>
-                {Math.max(kcal.toFixed(0), 0)} kcal
-              </p>
-              <button
-                onClick={() => onDeleteProductListItem(id)}
-                className={s.btn}
-              ></button>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <ul className={s.productsList}>
+      {productList?.map(({ title, weight, kcal, id }) => {
+        return (
+          <li key={id} className={s.productsItem}>
+            <p className={s.productsItem_title}>{title}</p>
+            <p className={s.productsItem_weight}>{weight} g</p>
+            <p className={s.productsItem_cal}>
+              {Math.max(kcal.toFixed(0), 0)} kcal
+            </p>
+            <button
+              onClick={() => onDeleteProductListItem(id)}
+              className={s.btn}
+            ></button>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

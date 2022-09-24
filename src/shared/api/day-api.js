@@ -2,15 +2,9 @@ import { instance } from './auth-api';
 
 export const dayProductPost = async data => {
   const { data: result } = await instance.post('/day', data);
-
   return result;
 };
 
-// export const dayProductDelete = async data => {
-//   const { data: result } = await instance.delete('/day', data);
-//   console.log(result);
-//   return result;
-// };
 export async function dayProductDelete(data, accessToken) {
   const formData = {
     dayId: data.dayId,
