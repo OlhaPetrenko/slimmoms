@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { $mobile, $tablet } from './styles/_variables.scss';
 
 const IS_MOBILE = () =>
-  typeof window !== 'undefined' ? window.innerWidth <= $mobile - 0.02 : 0;
+  typeof window !== 'undefined' ? window.innerWidth <= 768 - 0.02 : 0;
 const IS_TABLET = () =>
-  typeof window !== 'undefined' ? window.innerWidth <= $tablet - 0.02 : 0;
+  typeof window !== 'undefined' ? window.innerWidth <= 1280 - 0.02 : 0;
 
 const useResizeScreen = () => {
   const [isMobile, setMobile] = useState(false);

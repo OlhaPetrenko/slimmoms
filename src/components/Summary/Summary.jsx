@@ -29,9 +29,6 @@ const Summary = ({ date }) => {
               <tr>
                 <td>Consumed</td>
                 <td>
-                  {/* {summInfo.length > 0
-                    ? summDaySumm.kcalConsumed.toFixed(0)
-                    : `000`} */}
                   {summDaySumm?.kcalConsumed?.toFixed(0) ||
                     summDaySummNext?.kcalConsumed?.toFixed(0) ||
                     `000`}
@@ -41,9 +38,6 @@ const Summary = ({ date }) => {
               <tr>
                 <td>Daily rate</td>
                 <td>
-                  {/* {summInfo.length > 0
-                    ? summDaySumm.dailyRate.toFixed(0)
-                    : `000`} */}
                   {summDaySumm?.dailyRate?.toFixed(0) ||
                     summDaySummNext?.dailyRate?.toFixed(0) ||
                     `000`}
@@ -53,9 +47,6 @@ const Summary = ({ date }) => {
               <tr>
                 <td>n% of normal</td>
                 <td>
-                  {/* {summInfo.length > 0
-                    ? summDaySumm.percentsOfDailyRate.toFixed(0)
-                    : `000`} */}
                   {summDaySumm?.percentsOfDailyRate?.toFixed(0) ||
                     summDaySummNext?.percentsOfDailyRate?.toFixed(0) ||
                     `000`}
