@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   @include media-query(mobile-only) {
-    // background-color: #eff1f3;
+    background-color: #eff1f3;
     position: absolute;
     align-content: center;
     bottom: -59px;

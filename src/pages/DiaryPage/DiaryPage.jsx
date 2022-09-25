@@ -9,6 +9,9 @@ import s from './DiaryPage.module.scss';
 import DiaryAddProductForm from 'components/DiaryAddProductForm/DiaryAddProductForm';
 import DiaryProductsList from 'components/DiaryProductsList/DiaryProductsList';
 import Summary from 'components/Summary/Summary';
+import Modal from 'components/Modal/Modal';
+
+import useResizeScreen from 'shared/hooks/useResizeScreen';
 
 import {
   dayProductInfoOperation,
@@ -17,14 +20,20 @@ import {
 
 const DiaryPage = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const dispatch = useDispatch();
   const dailyRateId = useSelector(state => state.dailyRate.id);
   const date = startDate.toLocaleDateString('en-CA');
+  const mediaSize = useResizeScreen();
+  const { isMobile } = mediaSize;
 
   if (!dailyRateId) {
     return <Navigate to="/calculator" />;
   }
 
+  const onClickToggleModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     dispatch(dayProductInfoOperation({ date }));
@@ -35,8 +44,8 @@ const DiaryPage = () => {
     dispatch(dayProductPostOperation(dataPost));
   };
 
-  return (
-    <>
+  if (isMobile) {
+    return (
       <div className="container">
         <section className={s.section}>
           <DatePicker
@@ -44,13 +53,39 @@ const DiaryPage = () => {
             selected={startDate}
             onChange={date => setStartDate(date)}
           />
-          <DiaryAddProductForm onSubmit={onSubmit} />
+
           <DiaryProductsList date={date} />
+          <button
+            type="button"
+            onClick={onClickToggleModal}
+            className={s.btn}
+          ></button>
+          {isOpenModal && (
+            <Modal close={onClickToggleModal}>
+              <DiaryAddProductForm onSubmit={onSubmit} />
+            </Modal>
+          )}
 
           <Summary date={date} />
         </section>
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className="container">
+      <section className={s.section}>
+        <DatePicker
+          className={s.DatePicker}
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+        />
+        <DiaryAddProductForm onSubmit={onSubmit} />
+        <DiaryProductsList date={date} />
+
+        <Summary date={date} />
+      </section>
+    </div>
   );
 };
 

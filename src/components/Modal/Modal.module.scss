@@ -18,23 +18,22 @@
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -30%) scale(1);
   text-align: center;
   background-color: #fff;
   padding: 40px 20px 120px;
   @include media-query(mobile-only) {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -30%) scale(1);
+    position: relative;
+    top: 40px;
+
     width: 100%;
-    margin-top: 10px;
+    height: 100vh;
   }
 
   @include media-query(tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%) scale(1);
     padding: 64px 81px 81px 82px;
   }
 }

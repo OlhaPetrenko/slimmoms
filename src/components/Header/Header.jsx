@@ -1,32 +1,41 @@
 import { useSelector } from 'react-redux';
-import {
-  Logo,
-  UserInfo,
-  Navigation,
-  // UserInfoLogo,
-  MobileNav,
-  Burger,
-} from '/';
+import { useState } from 'react';
+import { Logo, UserInfo, Navigation, MobileNav, Burger, Close } from '/';
 import s from './Header.module.scss';
-
+import SideBar from 'components/Sidebar/SideBar';
 import useResizeScreen from 'shared/hooks/useResizeScreen';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const isLogIn = useSelector(state => state.user.isLogin);
   const mediaScreen = useResizeScreen();
-  
+
+  const onClickToggleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   if (mediaScreen.isMobile || mediaScreen.isTablet) {
     return (
-      <header className={ s.header }>
+      <header className={s.header}>
         <div className="container">
-          <div className={ s.navContainer }>
+          <div className={s.navContainer}>
             <Logo />
-            <nav className={ s.nav }>{ !isLogIn && <Navigation /> }</nav>
-            { isLogIn && (
+            <nav className={s.nav}>{!isLogIn && <Navigation />}</nav>
+            {isLogIn && (
               <>
-                <MobileNav /> <Burger />
+                <MobileNav />
+                {isOpen ? (
+                  <Close toggleMenuIsOpen={onClickToggleIsOpen} />
+                ) : (
+                  <Burger toggleMenuIsOpen={onClickToggleIsOpen} />
+                )}
               </>
-            ) }
+            )}
+            {isOpen && (
+              <SideBar>
+                <UserInfo />
+              </SideBar>
+            )}
           </div>
         </div>
       </header>
@@ -34,18 +43,18 @@ const Header = () => {
   }
 
   return (
-    <header className={ s.header }>
+    <header className={s.header}>
       <div className="container">
-        <div className={ s.navContainer }>
+        <div className={s.navContainer}>
           <Logo />
-          <nav className={ s.nav }>
-            { !isLogIn ? <Navigation /> : <UserInfo /> }
+          <nav className={s.nav}>
+            {!isLogIn ? <Navigation /> : <UserInfo />}
           </nav>
-          { isLogIn && (
+          {isLogIn && (
             <>
               <MobileNav />
             </>
-          ) }
+          )}
         </div>
       </div>
     </header>
