@@ -134,6 +134,7 @@ function DailyCaloriesForm({ onSubmit }) {
                   name="blood"
                   value="1"
                   onChange={handleChange}
+                  required
                 />
                 <span className={s.radioSpan}>1</span>
               </label>

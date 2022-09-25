@@ -40,7 +40,7 @@ export const dayProductDeleteOperation = createAsyncThunk(
       const result = await dayProductDelete(data, accessToken);
       return result;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -53,7 +53,7 @@ export const dayProductInfoOperation = createAsyncThunk(
       console.log(result);
       return result;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );

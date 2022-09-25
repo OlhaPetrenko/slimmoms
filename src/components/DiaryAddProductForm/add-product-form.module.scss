@@ -5,6 +5,7 @@
   flex-direction: column;
   // gap: 32px;
   margin-top: 80px;
+  margin-bottom: 20px;
 
   @include media-query(tablet) {
     display: inline-block;
@@ -25,6 +26,8 @@
   width: 280px;
   padding-bottom: 8px;
 
+  outline: transparent;
+
   @include media-query(tablet) {
     width: 240px;
     margin-right: 22px;
@@ -44,6 +47,8 @@
   color: $font-color-form;
   width: 280px;
   padding-bottom: 8px;
+
+  outline: transparent;
 
   @include media-query(tablet) {
     text-align: right;
@@ -102,6 +107,7 @@
   letter-spacing: 0.04em;
   overflow-y: scroll;
   max-height: 100px;
+  padding: 10px;
 
   @include media-query(tablet) {
     font-size: 12px;
@@ -114,7 +120,6 @@
 
 .productsList::-webkit-scrollbar {
   width: 3px; /* ширина всей полосы прокрутки */
-  height: 3px;
 }
 
 .productsList::-webkit-scrollbar-track {
@@ -123,7 +128,7 @@
 
 .productsList::-webkit-scrollbar-thumb {
   background: #939393;
-
+  height: 30px;
   border-radius: 20px;
 }
 

@@ -35,6 +35,11 @@
       font-size: 24px;
       line-height: 1.2;
     }
+    @include media-query(desktop) {
+      font-size: 14px;
+      flex-direction: row;
+      padding: 10px 0;
+    }
     &.active {
       transition: 0.8s;
       color: $color-primary;
@@ -50,11 +55,6 @@
       @include media-query(not-desktop) {
         color: #ffffff;
       }
-    }
-
-    @include media-query(desktop) {
-      flex-direction: row;
-      padding: 10px 0;
     }
   }
 }

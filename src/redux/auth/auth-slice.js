@@ -9,7 +9,6 @@ import {
 
 const initialState = {
   user: {},
-  userId: '',
   accessToken: '',
   refreshToken: '',
   sid: '',

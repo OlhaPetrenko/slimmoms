@@ -71,7 +71,7 @@ function DiaryAddProductForm({ onSubmit }) {
           type="text"
           name="productName"
           placeholder="Enter product name"
-          // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           required
           id={productNameInputId}
         />
