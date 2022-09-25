@@ -4,12 +4,11 @@ import s from './Summary.module.scss';
 
 const Summary = ({ date }) => {
   const summDaySumm = useSelector(state => state.day.daySummary);
+  const summDaySummNext = useSelector(state => state.day.day);
   const summNotAllowed = useSelector(
     state => state.dailyRate.notAllowedProducts
   );
 
-  const summInfo = Object.keys(summDaySumm);
-  console.log(summInfo);
   return (
     <div className={s.summary}>
       <div className={s.summary_contant}>
@@ -20,9 +19,9 @@ const Summary = ({ date }) => {
               <tr>
                 <td className={s.summary_column}>Left</td>
                 <td>
-                  {summInfo.length > 0
-                    ? Math.max(summDaySumm.kcalLeft.toFixed(0), 0)
-                    : `000`}
+                  {summDaySumm?.kcalLeft?.toFixed(0) ||
+                    summDaySummNext?.kcalLeft?.toFixed(0) ||
+                    `000`}
                 </td>
 
                 <td>kcal</td>
@@ -30,27 +29,36 @@ const Summary = ({ date }) => {
               <tr>
                 <td>Consumed</td>
                 <td>
-                  {summInfo.length > 0
+                  {/* {summInfo.length > 0
                     ? summDaySumm.kcalConsumed.toFixed(0)
-                    : `000`}
+                    : `000`} */}
+                  {summDaySumm?.kcalConsumed?.toFixed(0) ||
+                    summDaySummNext?.kcalConsumed?.toFixed(0) ||
+                    `000`}
                 </td>
                 <td>kcal</td>
               </tr>
               <tr>
                 <td>Daily rate</td>
                 <td>
-                  {summInfo.length > 0
+                  {/* {summInfo.length > 0
                     ? summDaySumm.dailyRate.toFixed(0)
-                    : `000`}
+                    : `000`} */}
+                  {summDaySumm?.dailyRate?.toFixed(0) ||
+                    summDaySummNext?.dailyRate?.toFixed(0) ||
+                    `000`}
                 </td>
                 <td>kcal</td>
               </tr>
               <tr>
                 <td>n% of normal</td>
                 <td>
-                  {summInfo.length > 0
+                  {/* {summInfo.length > 0
                     ? summDaySumm.percentsOfDailyRate.toFixed(0)
-                    : `000`}
+                    : `000`} */}
+                  {summDaySumm?.percentsOfDailyRate?.toFixed(0) ||
+                    summDaySummNext?.percentsOfDailyRate?.toFixed(0) ||
+                    `000`}
                   %
                 </td>
                 <td>kcal</td>

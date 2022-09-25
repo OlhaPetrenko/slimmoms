@@ -22,8 +22,8 @@ const daySlice = createSlice({
       state.error = null;
     },
     [dayProductPostOperation.fulfilled]: (state, { payload }) => {
-      state.day = payload.day;
-      state.daySummary = payload.daySummary;
+      state.day = payload.newDay;
+      state.daySummary = payload.newSummary;
       state.eatenProduct = payload.eatenProduct;
       state.isLoading = false;
       state.error = null;

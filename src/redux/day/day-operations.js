@@ -10,7 +10,7 @@ export const dayProductPostOperation = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await dayProductPost(data);
-      // console.log(result);
+      console.log(result);
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
