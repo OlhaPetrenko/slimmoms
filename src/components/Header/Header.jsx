@@ -13,23 +13,20 @@ import useResizeScreen from 'shared/hooks/useResizeScreen';
 
 const Header = () => {
   const isLogIn = useSelector(state => state.user.isLogin);
-
   const mediaScreen = useResizeScreen();
-  console.log(mediaScreen.isMobile);
-  console.log(mediaScreen.isTablet);
-
+  
   if (mediaScreen.isMobile || mediaScreen.isTablet) {
     return (
-      <header className={s.header}>
+      <header className={ s.header }>
         <div className="container">
-          <div className={s.navContainer}>
+          <div className={ s.navContainer }>
             <Logo />
-            <nav className={s.nav}>{!isLogIn && <Navigation />}</nav>
-            {isLogIn && (
+            <nav className={ s.nav }>{ !isLogIn && <Navigation /> }</nav>
+            { isLogIn && (
               <>
                 <MobileNav /> <Burger />
               </>
-            )}
+            ) }
           </div>
         </div>
       </header>
@@ -37,18 +34,18 @@ const Header = () => {
   }
 
   return (
-    <header className={s.header}>
+    <header className={ s.header }>
       <div className="container">
-        <div className={s.navContainer}>
+        <div className={ s.navContainer }>
           <Logo />
-          <nav className={s.nav}>
-            {!isLogIn ? <Navigation /> : <UserInfo />}
+          <nav className={ s.nav }>
+            { !isLogIn ? <Navigation /> : <UserInfo /> }
           </nav>
-          {isLogIn && (
+          { isLogIn && (
             <>
-              <MobileNav /> <Burger />
+              <MobileNav />
             </>
-          )}
+          ) }
         </div>
       </div>
     </header>
