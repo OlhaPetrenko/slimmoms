@@ -16,6 +16,9 @@
     width: 240px;
     margin-left: 0;
   }
+  @include media-query(desktop) {
+    margin-top: 90px;
+  }
 }
 .helper {
   display: flex;
@@ -216,4 +219,36 @@
   top: -20px;
   font-size: 10px;
   color: $color-accent;
+}
+.title {
+  @include media-query(mobile) {
+    margin-bottom: 32px;
+    width: 280px;
+
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.44;
+  }
+  @include media-query(tablet) {
+    margin-bottom: 68px;
+    width: 704px;
+
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+  }
+  @include media-query(desktop) {
+    margin-bottom: 68px;
+    width: 608px;
+
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+  }
 }
