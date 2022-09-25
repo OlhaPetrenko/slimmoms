@@ -46,10 +46,10 @@ const DiaryPage = () => {
           />
           <DiaryAddProductForm onSubmit={onSubmit} />
           <DiaryProductsList date={date} />
+
+          <Summary date={date} />
         </section>
       </div>
-
-      <Summary date={date} />
     </>
   );
 };
