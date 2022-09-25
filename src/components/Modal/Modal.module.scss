@@ -12,20 +12,26 @@
   right: 0;
   z-index: 10;
   background-color: rgba(33, 33, 33, 0.12);
+  @include media-query(mobile-only) {
+    top: 80px;
+  }
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -30%) scale(1);
   text-align: center;
   background-color: #fff;
   padding: 40px 20px 120px;
-
   @include media-query(mobile-only) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%) scale(1);
     width: 100%;
-    margin-top: 110px;
+    margin-top: 10px;
   }
 
   @include media-query(tablet) {
@@ -58,3 +64,9 @@
     background-position: center;
   }
 }
+
+// body {
+//   @include media-query(mobile-only) {
+//     overflow: hidden;
+//   }
+// }

@@ -4,8 +4,10 @@
   display: flex;
   padding: 20px 0 16px;
   border-bottom: 2px solid #e0e0e0;
-  position: relative;
-  @include media-query(tablet) {
+  @include media-query(not-desktop) {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
   }
   @include media-query(desktop) {
     padding: 80px 0;
@@ -19,14 +21,13 @@
     align-items: center;
   }
   @include media-query(desktop) {
+    justify-content: flex-start;
     align-items: baseline;
     margin-left: auto;
   }
 }
 .nav {
   display: flex;
-  // align-items: center;
-  // margin-bottom: 16px;
   justify-content: space-between;
   @include media-query(tablet) {
     justify-content: space-between;

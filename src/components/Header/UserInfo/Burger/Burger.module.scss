@@ -5,12 +5,8 @@
   background-image: url(../../../../shared/images/logo/mobile-burger.svg);
   width: 24px;
   height: 24px;
-  // align-items: start;
   background-color: transparent;
   @include media-query(tablet) {
     margin-left: 53px;
-  }
-  @include media-query(desktop) {
-    display: none;
   }
 }
