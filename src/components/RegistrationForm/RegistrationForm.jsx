@@ -102,7 +102,7 @@ function RegistrationForm({ onSubmit }) {
         <button type="submit" className={s.btn}>
           Login
         </button>
-        <button type="button" className={s.btnActive}>
+        <button type="button" className={s.btn}>
           Register
         </button>
       </div>
