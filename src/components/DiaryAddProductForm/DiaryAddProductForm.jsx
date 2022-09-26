@@ -5,12 +5,15 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { productOperation } from 'redux/product/product-operations';
+import useResizeScreen from 'shared/hooks/useResizeScreen';
 
 import s from './add-product-form.module.scss';
-function DiaryAddProductForm({ onSubmit }) {
+function DiaryAddProductForm({ onSubmit, closeModal }) {
   const [productName, setName] = useState('');
   const [grams, setGrams] = useState('');
   const [productId, setProductId] = useState('');
+  const mediaSize = useResizeScreen();
+  const { isMobile } = mediaSize;
 
   const dispatch = useDispatch();
   const arrProducts = useSelector(state => state.product.items);
@@ -51,7 +54,9 @@ function DiaryAddProductForm({ onSubmit }) {
       productId,
       weight: grams,
     };
-
+    if (isMobile) {
+      closeModal();
+    }
     onSubmit(data);
     reset();
   };
@@ -86,11 +91,14 @@ function DiaryAddProductForm({ onSubmit }) {
           required
           id={gramsInputId}
         />
-        <button className={s.btn1} type="submit">
-          Add
-        </button>
 
-        <button className={s.btn2} type="submit"></button>
+        {isMobile ? (
+          <button className={s.btn1} type="submit">
+            Add
+          </button>
+        ) : (
+          <button className={s.btn2} type="submit"></button>
+        )}
       </form>
 
       <ul className={s.productsList}>

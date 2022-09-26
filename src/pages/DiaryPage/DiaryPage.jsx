@@ -48,27 +48,30 @@ const DiaryPage = () => {
     return (
       <>
         <div className="container">
-          <section className={ s.section }>
+          <section className={s.section}>
             <DatePicker
-              className={ s.DatePicker }
-              selected={ startDate }
-              onChange={ date => setStartDate(date) }
+              className={s.DatePicker}
+              selected={startDate}
+              onChange={date => setStartDate(date)}
             />
 
-            <DiaryProductsList date={ date } />
+            <DiaryProductsList date={date} />
             <button
               type="button"
-              onClick={ onClickToggleModal }
-              className={ s.btn }
+              onClick={onClickToggleModal}
+              className={s.btn}
             ></button>
-            { isOpenModal && (
-              <Modal close={ onClickToggleModal }>
-                <DiaryAddProductForm onSubmit={ onSubmit } />
+            {isOpenModal && (
+              <Modal close={onClickToggleModal}>
+                <DiaryAddProductForm
+                  onSubmit={onSubmit}
+                  closeModal={onClickToggleModal}
+                />
               </Modal>
-            ) }
+            )}
           </section>
         </div>
-        <Summary date={ date } />
+        <Summary date={date} />
       </>
     );
   }
@@ -76,16 +79,16 @@ const DiaryPage = () => {
   return (
     <>
       <div className="container">
-        <section className={ s.section }>
+        <section className={s.section}>
           <DatePicker
-            className={ s.DatePicker }
-            selected={ startDate }
-            onChange={ date => setStartDate(date) }
+            className={s.DatePicker}
+            selected={startDate}
+            onChange={date => setStartDate(date)}
           />
-          <DiaryAddProductForm onSubmit={ onSubmit } />
-          <DiaryProductsList date={ date } />
+          <DiaryAddProductForm onSubmit={onSubmit} />
+          <DiaryProductsList date={date} />
         </section>
-      <Summary date={ date } />
+        <Summary date={date} />
       </div>
     </>
   );
