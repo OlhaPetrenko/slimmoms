@@ -3,8 +3,8 @@
 
 .section {
   @include media-query(tablet) {
-    padding-top: 176px;
-    padding-bottom: 495px;
+    padding-top: 120px;
+    padding-bottom: 230px;
 
     background-image: url(../../shared/images/loginRegistrForm/strawberry_md.png),
       url(../../shared/images/loginRegistrForm/banana_md.png),
@@ -17,14 +17,17 @@
         url(../../shared/images/loginRegistrForm/leaves_md@2x.png),
         url(../../shared/images/loginRegistrForm/vector_md.svg);
     }
-    background-size: 267px 284px, 500px 427px, 740px 742px, 532px 550px;
+    background-size: 267px 284px, 500px 427px, 740px 742px, 532px 600px;
     background-repeat: no-repeat;
-    background-position: bottom 279px right 0, bottom 0 right 0,
-      top 0 right 14px, bottom 0 right 0;
+    background-position: top 370px right 0, top 475px right 0,
+      top -110px right 14px, top 320px right 0;
   }
   @include media-query(desktop) {
-    padding-top: 306px;
-    padding-bottom: 255px;
+    margin-top: -275px;
+    padding-top: 300px;
+    padding-bottom: 0px;
+    // padding-top: 306px;
+    // padding-bottom: 255px;
 
     background-image: url(../../shared/images/loginRegistrForm/group_lg.png),
       url(../../shared/images/loginRegistrForm/vector_lg.svg);
@@ -33,7 +36,7 @@
       background-image: url(../../shared/images/loginRegistrForm/group_lg@2x.png),
         url(../../shared/images/loginRegistrForm/vector_lg.svg);
     }
-    background-size: 980px 820px, 602px 816px;
+    background-size: 980px 820px, 602px 876px;
     background-repeat: no-repeat;
     background-position: top 0 right 0;
   }

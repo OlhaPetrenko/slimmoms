@@ -94,6 +94,14 @@
   @include media-query(desktop) {
     display: none;
   }
+
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+  }
 }
 
 .btnActiveRight {
@@ -121,6 +129,7 @@
     margin-top: 20px;
     margin-bottom: 54px;
     display: block;
+    margin-left: 30px;
   }
   @include media-query(tablet) {
     display: none;
@@ -128,7 +137,17 @@
   @include media-query(desktop) {
     display: block;
     margin-top: 89px;
+    margin-bottom: 30px;
+    // margin-bottom: 111px;
     margin-right: -40px;
+  }
+
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
   }
 }
 
@@ -242,7 +261,8 @@
   }
   @include media-query(tablet) {
     margin-bottom: 68px;
-    width: 704px;
+    width: 500px;
+    padding-top: 50px;
 
     font-family: 'Verdana';
     font-style: normal;
@@ -253,7 +273,7 @@
   @include media-query(desktop) {
     margin-bottom: 68px;
     width: 608px;
-
+    padding-top: 35px;
     font-family: 'Verdana';
     font-style: normal;
     font-weight: 700;
