@@ -21,6 +21,7 @@ const CalculatorPage = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
+  console.log(modalOpen);
   return (
     <>
       <div className="container">

@@ -6,8 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: fixed;
+  // overflow: hidden;
+  position: absolute;
   top: 0px;
   right: 0;
   z-index: 10;
@@ -22,7 +22,7 @@
   background-color: #fff;
   padding: 40px 20px 120px;
   @include media-query(mobile-only) {
-    position: relative;
+    position: absolute;
     top: 40px;
 
     width: 100%;
@@ -33,7 +33,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
     padding: 64px 81px 81px 82px;
   }
 }
@@ -63,9 +63,3 @@
     background-position: center;
   }
 }
-
-// body {
-//   @include media-query(mobile-only) {
-//     overflow: hidden;
-//   }
-// }
