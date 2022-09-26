@@ -24,9 +24,6 @@ const MainPage = () => {
     <>
       <div className={s.section}>
         <div className="container">
-          <h1 className={s.formTitle}>
-            Calculate your daily calorie intake right now
-          </h1>
           <DailyCaloriesForm onSubmit={onSubmit} />
         </div>
       </div>

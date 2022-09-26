@@ -46,6 +46,35 @@ const DiaryPage = () => {
 
   if (isMobile) {
     return (
+      <>
+        <div className="container">
+          <section className={s.section}>
+            <DatePicker
+              className={s.DatePicker}
+              selected={startDate}
+              onChange={date => setStartDate(date)}
+            />
+
+            <DiaryProductsList date={date} />
+            <button
+              type="button"
+              onClick={onClickToggleModal}
+              className={s.btn}
+            ></button>
+            {isOpenModal && (
+              <Modal close={onClickToggleModal}>
+                <DiaryAddProductForm onSubmit={onSubmit} />
+              </Modal>
+            )}
+          </section>
+        </div>
+        <Summary date={date} />
+      </>
+    );
+  }
+
+  return (
+    <>
       <div className="container">
         <section className={s.section}>
           <DatePicker
@@ -53,39 +82,12 @@ const DiaryPage = () => {
             selected={startDate}
             onChange={date => setStartDate(date)}
           />
-
+          <DiaryAddProductForm onSubmit={onSubmit} />
           <DiaryProductsList date={date} />
-          <button
-            type="button"
-            onClick={onClickToggleModal}
-            className={s.btn}
-          ></button>
-          {isOpenModal && (
-            <Modal close={onClickToggleModal}>
-              <DiaryAddProductForm onSubmit={onSubmit} />
-            </Modal>
-          )}
-
-          <Summary date={date} />
         </section>
       </div>
-    );
-  }
-
-  return (
-    <div className="container">
-      <section className={s.section}>
-        <DatePicker
-          className={s.DatePicker}
-          selected={startDate}
-          onChange={date => setStartDate(date)}
-        />
-        <DiaryAddProductForm onSubmit={onSubmit} />
-        <DiaryProductsList date={date} />
-
-        <Summary date={date} />
-      </section>
-    </div>
+      <Summary date={date} />
+    </>
   );
 };
 
