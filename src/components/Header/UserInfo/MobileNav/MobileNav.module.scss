@@ -40,11 +40,13 @@
     font-weight: 700;
     line-height: 13px;
     letter-spacing: 0.04em;
-    padding: 15px 0px 13px 0;
+    padding: 10px 16px 10px 0;
+    @include media-query(mobile) {
+      border-right: 2px solid rgb(224, 224, 224);
+    }
     @include media-query(tablet) {
       margin: 0;
       padding: 10px 15px 10px 0;
-      border-right: 2px solid rgb(224, 224, 224);
     }
     @include media-query(desktop) {
       padding: 10px 20px 10px 0;

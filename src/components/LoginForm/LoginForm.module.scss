@@ -119,6 +119,13 @@
   background-color: $color-accent;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+  }
 }
 
 .btn {
@@ -136,4 +143,11 @@
   color: $color-accent;
   border: 2px solid $color-accent;
   border-radius: 30px;
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+  }
 }
