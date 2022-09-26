@@ -77,7 +77,7 @@ function LoginForm({ onSubmit }) {
       </div>
 
       <div className={s.btnGroup}>
-        <button type="submit" className={s.btnActive}>
+        <button type="submit" className={s.btn}>
           Login
         </button>
         <button
