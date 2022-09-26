@@ -25,9 +25,8 @@ const CalculatorPage = () => {
     <>
       <div className="container">
         <DailyCaloriesForm onSubmit={onSubmit} />
-
-        <Summary />
       </div>
+      <Summary />
       {modalOpen && (
         <Modal close={closeModal}>
           <DailyCalorieIntake />
