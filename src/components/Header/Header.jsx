@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+
 import { Logo, UserInfo, Navigation, MobileNav, Burger, Close } from '/';
 import s from './Header.module.scss';
 import SideBar from 'components/Sidebar/SideBar';
@@ -33,7 +34,7 @@ const Header = () => {
             )}
             {isOpen && (
               <SideBar>
-                <UserInfo />
+                <UserInfo closeSideBar={onClickToggleIsOpen} />
               </SideBar>
             )}
           </div>

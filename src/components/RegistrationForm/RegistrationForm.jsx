@@ -1,12 +1,13 @@
 // import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import s from './RegistrationForm.module.scss';
 
 function RegistrationForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -99,11 +100,15 @@ function RegistrationForm({ onSubmit }) {
       </div>
 
       <div className={s.btnGroup}>
-        <button type="submit" className={s.btn}>
-          Login
-        </button>
-        <button type="button" className={s.btnActive}>
+        <button type="submit" className={s.btnActive}>
           Register
+        </button>
+        <button
+          type="button"
+          className={s.btn}
+          onClick={() => navigate('/login')}
+        >
+          Login
         </button>
       </div>
     </form>
