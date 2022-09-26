@@ -11,9 +11,7 @@ const Summary = ({ date }) => {
 
   return (
     <section className={s.section}>
-
-      <div className='container'>
-
+      <div className="container">
         <div className={s.summary}>
           <div className={s.summary_contant}>
             <div className={s.summary_table}>

@@ -47,8 +47,8 @@ const DiaryPage = () => {
   if (isMobile) {
     return (
       <>
-        <div className="container">
-          <section className={s.section}>
+        <section className={s.section}>
+          <div className="container">
             <DatePicker
               className={s.DatePicker}
               selected={startDate}
@@ -69,8 +69,8 @@ const DiaryPage = () => {
                 />
               </Modal>
             )}
-          </section>
-        </div>
+          </div>
+        </section>
         <Summary date={date} />
       </>
     );
@@ -78,8 +78,8 @@ const DiaryPage = () => {
 
   return (
     <>
-      <div className="container">
-        <section className={s.section}>
+      <section className={s.section}>
+        <div className="container">
           <DatePicker
             className={s.DatePicker}
             selected={startDate}
@@ -87,9 +87,9 @@ const DiaryPage = () => {
           />
           <DiaryAddProductForm onSubmit={onSubmit} />
           <DiaryProductsList date={date} />
-        </section>
-        <Summary date={date} />
-      </div>
+        </div>
+      </section>
+      <Summary date={date} />
     </>
   );
 };

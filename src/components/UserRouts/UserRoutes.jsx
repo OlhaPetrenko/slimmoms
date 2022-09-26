@@ -10,6 +10,7 @@ const Registration = lazy(() =>
 const Main = lazy(() => import('pages/MainPage/MainPage'));
 const Diary = lazy(() => import('pages/DiaryPage/DiaryPage'));
 const Calculator = lazy(() => import('pages/CalculatorPage/CalculatorPage'));
+const NotFound = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 const userRoutes = () => {
   return (
@@ -24,7 +25,7 @@ const userRoutes = () => {
           <Route path="/diary" element={<Diary />} />
           <Route path="/calculator" element={<Calculator />} />
         </Route>
-        <Route path="*" element={<p>Not Found</p>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );
