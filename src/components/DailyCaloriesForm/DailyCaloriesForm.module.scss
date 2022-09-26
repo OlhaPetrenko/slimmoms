@@ -67,20 +67,24 @@
 
 .btnActiveLeft {
   font-family: 'Verdana';
-
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
   letter-spacing: 0.04em;
-
   padding: 13px 25px;
   margin-top: 20px;
   width: 210px;
-
   color: $bg-color-primary;
   background-color: $color-accent;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+  }
   @include media-query(mobile) {
     display: none;
   }
@@ -90,28 +94,42 @@
   @include media-query(desktop) {
     display: none;
   }
+
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+  }
 }
 
 .btnActiveRight {
   font-family: 'Verdana';
-
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
   letter-spacing: 0.04em;
-
   margin-left: auto;
   margin-right: auto;
   width: 210px;
-
   color: $bg-color-primary;
   background-color: $color-accent;
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+  }
   @include media-query(mobile) {
     padding: 13px 25px;
     margin-top: 20px;
+    margin-bottom: 54px;
     display: block;
+    margin-left: 30px;
   }
   @include media-query(tablet) {
     display: none;
@@ -119,7 +137,17 @@
   @include media-query(desktop) {
     display: block;
     margin-top: 89px;
+    margin-bottom: 30px;
+    // margin-bottom: 111px;
     margin-right: -40px;
+  }
+
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
   }
 }
 
@@ -224,7 +252,7 @@
   @include media-query(mobile) {
     margin-bottom: 32px;
     width: 280px;
-
+    padding-top: 15px;
     font-family: 'Verdana';
     font-style: normal;
     font-weight: 700;
@@ -233,7 +261,8 @@
   }
   @include media-query(tablet) {
     margin-bottom: 68px;
-    width: 704px;
+    width: 500px;
+    padding-top: 50px;
 
     font-family: 'Verdana';
     font-style: normal;
@@ -244,7 +273,7 @@
   @include media-query(desktop) {
     margin-bottom: 68px;
     width: 608px;
-
+    padding-top: 35px;
     font-family: 'Verdana';
     font-style: normal;
     font-weight: 700;

@@ -9,7 +9,7 @@ export const registerUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await registration(data);
-
+      Notiflix.Notify.success(`Welcome to site, ${result.user.username}`);
       return result;
     } catch (error) {
       const statusErr = error.response.status;
@@ -35,13 +35,11 @@ export const logInUser = createAsyncThunk(
     try {
       const result = await login(data);
       Notiflix.Notify.success(`Welcome back, ${result.user.username}`);
-      console.log(result);
       dispatch(userInfoOperation(result.accessToken));
       dispatch(userInfoOperation(result.accessToken));
       return result;
     } catch (error) {
       const statusErr = error.response.status;
-      console.log(error);
 
       if (statusErr === 400) {
         Notiflix.Notify.failure('Bad request. try again later');

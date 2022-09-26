@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import s from './Modal.module.scss';
 
@@ -34,7 +34,7 @@ const Modal = ({ close, children }) => {
 
 export default Modal;
 
-// Modal.propTypes = {
-//   children: PropTypes.object.isRequired,
-//   close: PropTypes.func,
-// };
+Modal.propTypes = {
+  children: PropTypes.object.isRequired,
+  close: PropTypes.func,
+};

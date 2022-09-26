@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
 import s from './DailyCalorieIntake.module.scss';
 
 const DailyCalorieIntake = () => {
@@ -7,6 +8,7 @@ const DailyCalorieIntake = () => {
   const summNotAllowed = useSelector(
     state => state.dailyRate.notAllowedProducts
   );
+  const isLoading = useSelector(state => state.dailyRate.isLoading);
   const LogInUser = useSelector(state => state.user.isLogin);
   const navigate = useNavigate();
 
@@ -38,6 +40,8 @@ const DailyCalorieIntake = () => {
       <button className={s.button} onClick={navigation}>
         Start losing weight
       </button>
+
+      {isLoading && <Loader />}
     </>
   );
 };

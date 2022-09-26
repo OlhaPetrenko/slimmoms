@@ -29,7 +29,6 @@ const userSlice = createSlice({
       state.userInfo = payload;
       state.isLogin = true;
       state.isLoading = false;
-      // return { ...payload, isLogin: true, isLoading: false };
     },
     [userInfoOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;

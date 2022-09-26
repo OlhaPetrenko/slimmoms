@@ -16,7 +16,6 @@ const MainPage = () => {
   };
 
   const onSubmit = data => {
-    // console.log(data);
     dispatch(dailyRateOperation(data));
     setModalOpen(true);
   };

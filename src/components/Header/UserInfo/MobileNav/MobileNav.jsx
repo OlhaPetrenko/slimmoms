@@ -1,12 +1,11 @@
-// import { FiCornerDownLeft } from "react-icons/fi";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'redux/auth/auth-operation';
 import { clearUser } from 'redux/user/user.slice';
-import s from "./MobileNav.module.scss"
+import s from './MobileNav.module.scss';
 
 const MobileNav = () => {
-  const dispatch = useDispatch()
-  const userName = useSelector(state => state.user.userInfo.username)
+  const dispatch = useDispatch();
+  const userName = useSelector(state => state.user.userInfo.username);
 
   const logOut = () => {
     dispatch(logoutUser());
@@ -14,14 +13,15 @@ const MobileNav = () => {
   };
 
   return (
-    <div className={ s.mobileNav }>
-      {/* <button className={ s.btnBack } ><FiCornerDownLeft size="20px" /></button> */ }
-      <div className={ s.mobileNavInfo }>
-        <div className={ s.mobileNavName }>{ userName }</div>
-        <button className={ s.btnLogout } onClick={ () => logOut() }>Exit</button>
+    <div className={s.mobileNav}>
+      <div className={s.mobileNavInfo}>
+        <div className={s.mobileNavName}>{userName}</div>
+        <button className={s.btnLogout} onClick={() => logOut()}>
+          Exit
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default MobileNav;

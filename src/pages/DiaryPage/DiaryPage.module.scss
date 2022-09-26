@@ -1,14 +1,19 @@
 @import '../../common.scss';
 
 .section {
-  padding-top: 40px;
+  padding-top: 60px;
   padding-bottom: 40px;
+  @include media-query(mobile) {
+    padding-top: 0px;
+  }
+  @include media-query(tablet) {
+    padding-top: 50px;
+  }
 }
 
 .DatePicker {
   border: none;
   margin-top: 40px;
-
   font-family: 'Verdana';
   font-style: normal;
   font-weight: 700;
@@ -20,8 +25,12 @@
   background-repeat: no-repeat;
   background-position: 137px;
 
+  @include media-query(mobile) {
+    margin-top: 30px;
+  }
+
   @include media-query(tablet) {
-    margin-top: 100px;
+    margin-top: 0px;
     font-size: 34px;
     line-height: 1.21;
     background-position: 240px;

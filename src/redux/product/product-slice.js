@@ -3,15 +3,8 @@ import { productOperation } from './product-operations';
 
 const initialState = {
   items: [],
-  // id: '',
-  // categories: [],
-  // weight: null,
-  // title: {},
-  // calories: null,
-  // groupBloodNotAllowed: [],
-  // __v: null,
-  // isLoading: false,
-  // error: null,
+  isLoading: false,
+  error: null,
 };
 
 const productSlice = createSlice({
