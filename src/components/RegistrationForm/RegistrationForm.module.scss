@@ -117,6 +117,7 @@
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
 
+
   @include media-query(tablet) {
     margin-bottom: 179px;
   }
@@ -132,21 +133,27 @@
 
 .btn {
   font-family: 'Verdana';
-
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
   letter-spacing: 0.04em;
-
   padding: 13px 30px;
   min-width: 182px;
-
   background-color: $bg-color-primary;
   color: $color-accent;
   border: 2px solid $color-accent;
   border-radius: 30px;
 
+  &:hover,
+  &:focus {
+    font-size: 15px;
+    font-weight: 900;
+    scale: 1.1;
+    transition: 0.8s;
+
+
   @include media-query(tablet) {
     margin-bottom: 179px;
+
   }
 }

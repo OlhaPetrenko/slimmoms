@@ -24,15 +24,14 @@ const CalculatorPage = () => {
   return (
     <>
       <div className="container">
-        <DailyCaloriesForm onSubmit={onSubmit} />
-
-        <Summary />
+        <DailyCaloriesForm onSubmit={ onSubmit } />
       </div>
-      {modalOpen && (
-        <Modal close={closeModal}>
+      <Summary />
+      { modalOpen && (
+        <Modal close={ closeModal }>
           <DailyCalorieIntake />
         </Modal>
-      )}
+      ) }
     </>
   );
 };
