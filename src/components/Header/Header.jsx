@@ -1,29 +1,63 @@
-import { useDispatch, useSelect } from 'react-redux';
-import { Logo, UserInfo, Navigation, UserInfoLogo, MobileNav } from '/';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import { Logo, UserInfo, Navigation, MobileNav, Burger, Close } from '/';
 import s from './Header.module.scss';
-
-import { logoutUser } from 'redux/auth/auth-operation';
+import SideBar from 'components/Sidebar/SideBar';
+import useResizeScreen from 'shared/hooks/useResizeScreen';
 
 const Header = () => {
-  // const isLogin = false;
-  const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
+  const isLogIn = useSelector(state => state.user.isLogin);
+  const mediaScreen = useResizeScreen();
 
-  return (
-    <div>
+  const onClickToggleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  if (mediaScreen.isMobile || mediaScreen.isTablet) {
+    return (
       <header className={s.header}>
         <div className="container">
-          <nav className={s.nav}>
-            <Logo /> <Navigation />
-            <UserInfo />
-            <button type="button" onClick={() => dispatch(logoutUser())}>
-              LogOut
-            </button>
-          </nav>
+          <div className={s.navContainer}>
+            <Logo />
+            <nav className={s.nav}>{!isLogIn && <Navigation />}</nav>
+            {isLogIn && (
+              <>
+                <MobileNav />
+                {isOpen ? (
+                  <Close toggleMenuIsOpen={onClickToggleIsOpen} />
+                ) : (
+                  <Burger toggleMenuIsOpen={onClickToggleIsOpen} />
+                )}
+              </>
+            )}
+            {isOpen && (
+              <SideBar>
+                <UserInfo />
+              </SideBar>
+            )}
+          </div>
         </div>
       </header>
+    );
+  }
 
-      {/* <MobileNav /> */}
-    </div>
+  return (
+    <header className={s.header}>
+      <div className="container">
+        <div className={s.navContainer}>
+          <Logo />
+          <nav className={s.nav}>
+            {!isLogIn ? <Navigation /> : <UserInfo />}
+          </nav>
+          {isLogIn && (
+            <>
+              <MobileNav />
+            </>
+          )}
+        </div>
+      </div>
+    </header>
   );
 };
 

@@ -1,34 +1,44 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { dayProductDeleteOperation } from "redux/day/day-operations.js"
 
+import s from './DiaryProductsList.module.scss';
 
-const DiaryProductsList = () => {
-  const productList = useSelector(state => state.day.day.eatenProducts)
-  const productId = useSelector(state => state.day.day)
-  const dispatch = useDispatch()
+import {
+  dayProductDeleteOperation,
+  dayProductInfoOperation,
+} from 'redux/day/day-operations.js';
 
-  const onDeleteProductListItem = e => {
+const DiaryProductsList = ({ date }) => {
+  const productList = useSelector(state => state.day.day.eatenProducts);
+  const productDayId = useSelector(state => state.day.day.id);
+  const dispatch = useDispatch();
+
+  const onDeleteProductListItem = id => {
     const data = {
-      dayId: e.target.id,
-      eatenProductId: e.target.name,
-    }
-    dispatch(dayProductDeleteOperation(data))
-
-  }
+      dayId: productDayId,
+      eatenProductId: id,
+    };
+    dispatch(dayProductDeleteOperation(data));
+    dispatch(dayProductInfoOperation({ date }));
+  };
   return (
-    <ul>
-      { productList?.map(({ title, weight, kcal, id, }) => (
-        <li key={ id }>
-          <p>{ title }</p>
-          <p>{ weight }g</p>
-          <p>{ kcal }kcal</p>
-          <button id={ productId.daySummary } name={ id }
-            onClick={ onDeleteProductListItem }>X</button>
-        </li>
-      ))
-      }
-    </ul >
+    <ul className={s.productsList}>
+      {productList?.map(({ title, weight, kcal, id }) => {
+        return (
+          <li key={id} className={s.productsItem}>
+            <p className={s.productsItem_title}>{title}</p>
+            <p className={s.productsItem_weight}>{weight} g</p>
+            <p className={s.productsItem_cal}>
+              {Math.max(kcal.toFixed(0), 0)} kcal
+            </p>
+            <button
+              onClick={() => onDeleteProductListItem(id)}
+              className={s.btn}
+            ></button>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

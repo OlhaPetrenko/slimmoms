@@ -8,7 +8,7 @@ export const userInfoOperation = createAsyncThunk(
       const result = await userInfo(data);
       return result;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );

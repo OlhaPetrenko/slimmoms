@@ -1,10 +1,10 @@
 import s from './Burger.module.scss';
 
-const Burger = ({ toggleMenuIsOpen }) => {
+const Close = ({ toggleMenuIsOpen }) => {
   return (
     <>
       <button
-        className={s.burger}
+        className={s.close}
         type="button"
         onClick={() => toggleMenuIsOpen()}
       ></button>
@@ -12,4 +12,4 @@ const Burger = ({ toggleMenuIsOpen }) => {
   );
 };
 
-export default Burger;
+export default Close;

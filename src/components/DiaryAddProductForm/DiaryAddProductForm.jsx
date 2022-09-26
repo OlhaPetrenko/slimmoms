@@ -4,32 +4,22 @@ import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
-import DatePicker from 'react-datepicker';
-
-import 'react-datepicker/dist/react-datepicker.css';
-
 import { productOperation } from 'redux/product/product-operations';
 
 import s from './add-product-form.module.scss';
-
 function DiaryAddProductForm({ onSubmit }) {
   const [productName, setName] = useState('');
   const [grams, setGrams] = useState('');
   const [productId, setProductId] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
+
   const dispatch = useDispatch();
   const arrProducts = useSelector(state => state.product.items);
   const productNameInputId = nanoid();
   const gramsInputId = nanoid();
-  const days = String(startDate.getDate()).padStart(2, '0');
-  const month = String(startDate.getMonth() + 1).padStart(2, '0');
-  const year = String(startDate.getFullYear());
-
-  const date = `${year}-${month}-${days}`;
 
   const onClickFetch = e => {
     setName(e.target.value);
-    if (e.target.value.replace(/ /g,'')) {
+    if (e.target.value.replace(/ /g, '')) {
       dispatch(productOperation(e.target.value));
     }
   };
@@ -58,11 +48,10 @@ function DiaryAddProductForm({ onSubmit }) {
   const onClickSubmit = e => {
     e.preventDefault();
     const data = {
-      date,
       productId,
       weight: grams,
     };
-    console.log(data);
+
     onSubmit(data);
     reset();
   };
@@ -74,48 +63,49 @@ function DiaryAddProductForm({ onSubmit }) {
 
   return (
     <>
-      <form onSubmit={ onClickSubmit } className={ s.form }>
-        <DatePicker
-          selected={ startDate }
-          onChange={ date => setStartDate(date) }
-        />
+      <form onSubmit={onClickSubmit} className={s.form}>
         <input
-          onChange={ onClickFetch }
-          value={ productName }
-          className={ s.input1 }
+          onChange={onClickFetch}
+          value={productName}
+          className={s.input1}
           type="text"
           name="productName"
           placeholder="Enter product name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example - Poultry meat"
           required
-          id={ productNameInputId }
+          id={productNameInputId}
         />
-
         <input
-          onChange={ hendleInputChange }
-          value={ grams }
-          className={ s.input2 }
+          onChange={hendleInputChange}
+          value={grams}
+          className={s.input2}
           type="number"
           name="grams"
+          min="1"
           placeholder="Grams"
           pattern="^\d+(?:\.\d+)?\s*(?:grams)$"
           required
-          id={ gramsInputId }
+          id={gramsInputId}
         />
-        <button className={ s.btn1 } type="submit">
+        <button className={s.btn1} type="submit">
           Add
         </button>
 
-        <button className={ s.btn2 } type="submit"></button>
+        <button className={s.btn2} type="submit"></button>
       </form>
-      <ul>
-        { productName &&
+
+      <ul className={s.productsList}>
+        {productName &&
           arrProducts?.map(el => (
-            <li key={ el._id } onClick={ onClickTakeNameProduct } id={ el._id }>
-              { el.title.ru }
+            <li
+              key={el._id}
+              onClick={onClickTakeNameProduct}
+              id={el._id}
+              className={s.productsList_item}
+            >
+              {el.title.ru}
             </li>
-          )) }
+          ))}
       </ul>
     </>
   );

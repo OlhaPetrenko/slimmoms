@@ -3,40 +3,69 @@
 .overlay {
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(2px);
-  // background-color: lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   position: fixed;
-  top: 0;
+  top: 0px;
   right: 0;
   z-index: 10;
+  background-color: rgba(33, 33, 33, 0.12);
+  @include media-query(mobile-only) {
+    top: 80px;
+  }
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
   text-align: center;
-
-  padding: 64px 81px 81px 82px;
   background-color: #fff;
+  padding: 40px 20px 120px;
+  @include media-query(mobile-only) {
+    position: relative;
+    top: 40px;
+
+    width: 100%;
+    height: 100vh;
+  }
+
+  @include media-query(tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%) scale(1);
+    padding: 64px 81px 81px 82px;
+  }
 }
 
 .close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  fill: #000;
-  background-color: #fff;
-  cursor: pointer;
-  background-image: url('../../shared/images/close.svg');
-  background-position: center;
+  width: 15px;
+  height: 15px;
+  @include media-query(mobile-only) {
+    top: -22px;
+    left: 20px;
+  }
+  background-color: transparent;
+  background-image: url('../../shared/images/arrow.svg');
+  @include media-query(tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    fill: #000;
+
+    cursor: pointer;
+    background-image: url('../../shared/images/close.svg');
+    background-position: center;
+  }
 }
+
+// body {
+//   @include media-query(mobile-only) {
+//     overflow: hidden;
+//   }
+// }

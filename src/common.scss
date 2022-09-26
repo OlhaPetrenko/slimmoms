@@ -2,11 +2,13 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Verdana', 'VerdanaBold', 'GothamProBold', 'GothamProLight',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+  color: $color-primary;
+  background-color: $bg-color-primary;
 }
 
 code {
@@ -28,8 +30,7 @@ a {
   text-decoration: none;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
 }
 
@@ -61,5 +62,5 @@ body::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar-thumb:hover {
-  background: #dc56c5;
+  background: $color-accent;
 }

@@ -11,6 +11,14 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
+  reducers: {
+    clearUser: state => {
+      state.userInfo = {};
+      state.isLoading = false;
+      state.isLogin = false;
+      state.error = null;
+    },
+  },
   extraReducers: {
     [userInfoOperation.pending]: state => {
       state.isLoading = true;
@@ -30,4 +38,5 @@ const userSlice = createSlice({
   },
 });
 
+export const { clearUser } = userSlice.actions;
 export default userSlice.reducer;
