@@ -26,7 +26,6 @@ const dailyRateSlice = createSlice({
       state.notAllowedProducts = payload.notAllowedProducts;
       state.isLoading = false;
       state.error = null;
-      //   return { ...payload, isLoading: false, error: null };
     },
     [dailyRateOperation.rejected]: (state, { payload }) => {
       state.isLoading = false;
