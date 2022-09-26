@@ -9,7 +9,8 @@ export const registerUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await registration(data);
-      Notiflix.Notify.success(`Welcome to site, ${result.user.username}`);
+      Notiflix.Notify.success(`Welcome to site, ${result.username}`);
+      console.log(result);
       return result;
     } catch (error) {
       const statusErr = error.response.status;

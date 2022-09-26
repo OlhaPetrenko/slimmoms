@@ -10,6 +10,7 @@ export const setToken = (accessToken = '') => {
 
 export const registration = async data => {
   const { data: result } = await instance.post('/auth/register', data);
+
   return result;
 };
 

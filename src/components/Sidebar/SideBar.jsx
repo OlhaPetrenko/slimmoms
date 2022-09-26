@@ -12,5 +12,5 @@ const SideBar = ({ children }) => {
 
 export default SideBar;
 SideBar.propTypes = {
-  onSubmit: PropTypes.element.isRequired,
+  children: PropTypes.element.isRequired,
 };

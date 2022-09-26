@@ -27,14 +27,10 @@ const DiaryPage = () => {
   const mediaSize = useResizeScreen();
   const { isMobile } = mediaSize;
 
-  if (!dailyRateId) {
-    return <Navigate to="/calculator" />;
-  }
-
   const onClickToggleModal = () => {
     setIsOpenModal(!isOpenModal);
   };
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+
   useEffect(() => {
     dispatch(dayProductInfoOperation({ date }));
   }, [date, dispatch]);
@@ -43,6 +39,9 @@ const DiaryPage = () => {
     const dataPost = { date, ...data };
     dispatch(dayProductPostOperation(dataPost));
   };
+  if (!dailyRateId) {
+    return <Navigate to="/calculator" />;
+  }
 
   if (isMobile) {
     return (
