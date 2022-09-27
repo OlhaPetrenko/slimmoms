@@ -10,6 +10,15 @@ export const dayProductPostOperation = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const result = await dayProductPost(data);
+      console.log(result);
+      if (result.hasOwnProperty('newDay')) {
+        const responseNewDate = {
+          day: result.newDay,
+          daySummary: result.newSummary,
+          eatenProduct: result.eatenProduct,
+        };
+        return responseNewDate;
+      }
       return result;
     } catch (error) {
       return rejectWithValue(error.message);
