@@ -5,12 +5,15 @@ const NotFoundPage = () => {
   return (
     <main>
       <div className="container">
-        <h3 className={s.title}>404 Page not found</h3>
-        <Link to="/main">
-          <button type="button" className={s.button}>
-            Go to main page
-          </button>
-        </Link>
+        <div className={s.position_container}>
+          <div className={s.images}></div>
+          <h3 className={s.title}>404 Page not found</h3>
+          <Link to="/">
+            <button type="button" className={s.button}>
+              Go to main page
+            </button>
+          </Link>
+        </div>
       </div>
     </main>
   );
