@@ -17,7 +17,7 @@ const userRoutes = () => {
   return (
     <Suspense>
       <Routes>
-        <Route path="/main" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route element={<PublicRoute />}>
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
