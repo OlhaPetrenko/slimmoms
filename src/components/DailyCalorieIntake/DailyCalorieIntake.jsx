@@ -24,11 +24,14 @@ const DailyCalorieIntake = () => {
         Your recommended daily
         <br /> calorie intake is
       </h2>
-      {isLoading && <Loader />}
       <div className={s.wrapper}>
-        <p className={s.dailyRate}>
-          {Number.parseInt(dailyRate)} <span className={s.kcal}>kcal</span>
-        </p>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <p className={s.dailyRate}>
+            {Number.parseInt(dailyRate)} <span className={s.kcal}>kcal</span>
+          </p>
+        )}
         <h3 className={s.titleList}>Foods you should not eat</h3>
         <ol className={s.list}>
           <li className={s.item}>{summNotAllowed[0]}</li>
