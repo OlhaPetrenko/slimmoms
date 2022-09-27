@@ -23,6 +23,7 @@
 .navContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   @include media-query(mobil) {
     align-items: center;

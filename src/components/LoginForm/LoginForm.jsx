@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import s from './LoginForm.module.scss';
@@ -94,6 +94,6 @@ function LoginForm({ onSubmit }) {
 
 export default LoginForm;
 
-// LoginForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+LoginForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

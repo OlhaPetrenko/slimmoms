@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import s from './RegistrationForm.module.scss';
@@ -117,6 +117,6 @@ function RegistrationForm({ onSubmit }) {
 
 export default RegistrationForm;
 
-// RegistrationForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+RegistrationForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import s from './Summary.module.scss';
 
@@ -73,3 +74,7 @@ const Summary = ({ date }) => {
 };
 
 export default Summary;
+
+Summary.propTypes = {
+  date: PropTypes.string,
+};

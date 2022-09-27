@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import s from './DailyCaloriesForm.module.scss';
 
@@ -182,6 +182,6 @@ function DailyCaloriesForm({ onSubmit }) {
 
 export default DailyCaloriesForm;
 
-// DailyCaloriesForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+DailyCaloriesForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

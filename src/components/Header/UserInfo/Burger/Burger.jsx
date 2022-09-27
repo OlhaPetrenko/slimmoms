@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './Burger.module.scss';
 
 const Burger = ({ toggleMenuIsOpen }) => {
@@ -13,3 +14,7 @@ const Burger = ({ toggleMenuIsOpen }) => {
 };
 
 export default Burger;
+
+Burger.propTypes = {
+  toggleMenuIsOpen: PropTypes.func,
+};
