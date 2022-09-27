@@ -24,6 +24,7 @@ const DailyCalorieIntake = () => {
         Your recommended daily
         <br /> calorie intake is
       </h2>
+      {isLoading && <Loader />}
       <div className={s.wrapper}>
         <p className={s.dailyRate}>
           {Number.parseInt(dailyRate)} <span className={s.kcal}>kcal</span>
@@ -40,8 +41,6 @@ const DailyCalorieIntake = () => {
       <button className={s.button} onClick={navigation}>
         Start losing weight
       </button>
-
-      {isLoading && <Loader />}
     </>
   );
 };
