@@ -122,4 +122,5 @@ export default DiaryAddProductForm;
 
 DiaryAddProductForm.propTypes = {
   onSubmit: PropTypes.func,
+  closeModal: PropTypes.func,
 };
