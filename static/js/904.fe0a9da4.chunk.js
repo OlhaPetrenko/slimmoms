@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkslim_moms=self.webpackChunkslim_moms||[]).push([[904],{9904:function(n,e,t){t.r(e),t.d(e,{default:function(){return u}});var s=t(1087),a="NotFoundPage_title__4G8FX",o="NotFoundPage_button__Pj1H2",i=t(184),u=function(){return(0,i.jsx)("main",{children:(0,i.jsxs)("div",{className:"container",children:[(0,i.jsx)("h3",{className:a,children:"404 Page not found"}),(0,i.jsx)(s.rU,{to:"/main",children:(0,i.jsx)("button",{type:"button",className:o,children:"Go to main page"})})]})})}}}]);
-//# sourceMappingURL=904.fe0a9da4.chunk.js.map
