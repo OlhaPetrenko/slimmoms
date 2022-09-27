@@ -1,7 +1,14 @@
-import PacmanLoader from 'react-spinners/PacmanLoader';
+import { SpinnerRoundOutlined } from 'spinners-react';
 
 const Loader = () => {
-  return <PacmanLoader color="#fc842d" loading="true" />;
+  return (
+    <SpinnerRoundOutlined
+      size={50}
+      thickness={100}
+      speed={100}
+      color="rgba(252, 132, 45, 1)"
+    />
+  );
 };
 
 export default Loader;
