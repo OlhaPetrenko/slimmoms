@@ -3,13 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import s from './DailyCalorieIntake.module.scss';
 
+import {
+  dailyRateState,
+  dailyRateNotAllowedProd,
+  dailyRateIsLoading,
+} from 'redux/dailyRate/dailyRate.selectors';
+
+import { userIsLogIn } from 'redux/user/user-selector';
+
 const DailyCalorieIntake = () => {
-  const dailyRate = useSelector(state => state.dailyRate.dailyRate);
-  const summNotAllowed = useSelector(
-    state => state.dailyRate.notAllowedProducts
-  );
-  const isLoading = useSelector(state => state.dailyRate.isLoading);
-  const LogInUser = useSelector(state => state.user.isLogin);
+  const dailyRate = useSelector(dailyRateState);
+  const summNotAllowed = useSelector(dailyRateNotAllowedProd);
+  const isLoading = useSelector(dailyRateIsLoading);
+  const LogInUser = useSelector(userIsLogIn);
   const navigate = useNavigate();
 
   const navigation = () => {

@@ -8,9 +8,11 @@ import {
   dayProductInfoOperation,
 } from 'redux/day/day-operations.js';
 
+import { dayEatenProducts, dayId } from 'redux/day/day-selector';
+
 const DiaryProductsList = ({ date }) => {
-  const productList = useSelector(state => state.day.day.eatenProducts);
-  const productDayId = useSelector(state => state.day.day.id);
+  const productList = useSelector(dayEatenProducts);
+  const productDayId = useSelector(dayId);
   const dispatch = useDispatch();
 
   const onDeleteProductListItem = id => {

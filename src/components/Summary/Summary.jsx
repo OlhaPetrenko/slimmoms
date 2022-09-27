@@ -2,13 +2,13 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import s from './Summary.module.scss';
+import { dailyRateNotAllowedProd } from 'redux/dailyRate/dailyRate.selectors';
+import { dayDaySummary, dayNextDaySummary } from 'redux/day/day-selector';
 
 const Summary = ({ date }) => {
-  const summDaySumm = useSelector(state => state.day.daySummary);
-  const summDaySummNext = useSelector(state => state.day.day);
-  const summNotAllowed = useSelector(
-    state => state.dailyRate.notAllowedProducts
-  );
+  const summDaySumm = useSelector(dayDaySummary);
+  const summDaySummNext = useSelector(dayNextDaySummary);
+  const summNotAllowed = useSelector(dailyRateNotAllowedProd);
 
   return (
     <section className={s.section}>

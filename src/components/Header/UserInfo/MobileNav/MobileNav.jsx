@@ -2,10 +2,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'redux/auth/auth-operation';
 import { clearUser } from 'redux/user/user.slice';
 import s from './MobileNav.module.scss';
+import { userInfoName } from 'redux/user/user-selector';
 
 const MobileNav = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(state => state.user.userInfo.username);
+  const userName = useSelector(userInfoName);
 
   const logOut = () => {
     dispatch(logoutUser());

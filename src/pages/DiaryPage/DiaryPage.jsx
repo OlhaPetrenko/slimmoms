@@ -17,12 +17,13 @@ import {
   dayProductInfoOperation,
   dayProductPostOperation,
 } from 'redux/day/day-operations';
+import { dailyRateTakeId } from 'redux/dailyRate/dailyRate.selectors';
 
 const DiaryPage = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [isOpenModal, setIsOpenModal] = useState(false);
   const dispatch = useDispatch();
-  const dailyRateId = useSelector(state => state.dailyRate.id);
+  const dailyRateId = useSelector(dailyRateTakeId);
   const date = startDate.toLocaleDateString('en-CA');
   const mediaSize = useResizeScreen();
   const { isMobile } = mediaSize;

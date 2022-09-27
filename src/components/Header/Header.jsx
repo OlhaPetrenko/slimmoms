@@ -6,9 +6,11 @@ import s from './Header.module.scss';
 import SideBar from 'components/Sidebar/SideBar';
 import useResizeScreen from 'shared/hooks/useResizeScreen';
 
+import { userIsLogIn } from 'redux/user/user-selector';
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isLogIn = useSelector(state => state.user.isLogin);
+  const isLogIn = useSelector(userIsLogIn);
   const mediaScreen = useResizeScreen();
 
   const onClickToggleIsOpen = () => {
